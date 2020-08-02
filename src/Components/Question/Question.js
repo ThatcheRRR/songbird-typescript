@@ -1,9 +1,9 @@
 import React from 'react';
-import './Description.scss';
+import './Question.scss';
 
-function Description() {
+function Question() {
     return(
-    <section className = "description">
+        <section className = "question">
         <img src = 'https://i.playground.ru/e/k1jAC89bWjiKj38d1xmRpw.jpeg' alt = 'game poster' />
         <div className = 'game-info'>
             <h3 className = 'game-name'>Counter-Strike: Global Offensive</h3>
@@ -21,12 +21,9 @@ function Description() {
                     <input className = 'volume-level' type = 'range' min = '0' max = '1' step = '0.01' />
                 </div>
             </div>
-            <div className = 'game-description'>
-            разработана компаниями Valve и Hidden Path Entertainment и издана в 2012 году. Игроки распределяются по двум командам и сражаются друг с другом. В игре представлены две команды: террористы и спецназ, а также два сценария игры: разминирование бомбы и спасение заложника.
-            </div>
         </div>
     </section>
     );
 }
 
-export default Description;
+export default Question;

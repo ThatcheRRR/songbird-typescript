@@ -1,0 +1,22 @@
+button {
+    grid-area: button;
+    border-radius: 10px;
+    border: 1px solid lighten($color: #404040, $amount: 15%);
+    background-color: #404040;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        border-width: 2px;
+    }
+
+    &.next {
+        background-color: #00bc8c;
+        &:hover {
+            background-color: lighten($color: #00bc8c, $amount: 10%);
+        }
+    }
+}

@@ -1,5 +1,5 @@
-.description {
-    grid-area: description;
+.question {
+    grid-area: question;
     display: flex;
     padding: 15px;
     flex-wrap: wrap;
@@ -86,7 +86,7 @@
 }
 
 @media (max-width: 664px) {
-    .description {
+    .question {
         .game-info {
             padding-left: 0;
 

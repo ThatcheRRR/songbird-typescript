@@ -1,5 +1,50 @@
-$weight: bold;
-
 header {
-    font-weight: $weight;
+    grid-area: header;
+    margin-top: 20px;
+    font-size: 25px;
+
+    h1 {
+        font-family: 'GreatVibes';
+        & > span {
+            font-family: 'GreatVibes';
+            color: #008966;
+        }
+    }
+
+    h1 + p {
+        font-size: 20px;
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .theme-list {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        font-size: 15px;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .theme {
+            flex: 1 1;
+            padding: 10px;
+            text-align: center;
+            background-color: darken($color:#00bc8c, $amount: 10%);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.active {
+                background-color: #00bc8c;
+            }
+        }
+    }
 }
