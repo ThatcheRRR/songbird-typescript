@@ -1,35 +1,12 @@
 import React from 'react';
 import './Quiz.scss';
 
-function Quiz() {
+import QuizList from './QuizList';
+
+function Quiz({ currentGames, onPickGame }) {
     return(
         <section className = 'quiz'>
-        <ul className = 'quiz-list'>
-            <li class = "answer">
-                <span class = "answer-indicator"></span>
-                Ваф
-            </li>
-            <li class = "answer">
-                <span class = "answer-indicator"></span>
-                Ваф
-            </li>
-            <li class = "answer">
-                <span class = "answer-indicator"></span>
-                Ваф
-            </li>
-            <li class = "answer">
-                <span class = "answer-indicator"></span>
-                Ваф
-            </li>
-            <li class = "answer">
-                <span class = "answer-indicator"></span>
-                Ваф
-            </li>
-            <li class = "answer">
-                <span class = "answer-indicator"></span>
-                Ваф
-            </li>
-        </ul>
+        <QuizList data = {currentGames} onPickGame = {onPickGame} />
     </section>
     )
 }

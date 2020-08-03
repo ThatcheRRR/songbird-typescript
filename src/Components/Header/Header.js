@@ -1,25 +1,15 @@
 import React from 'react';
 import './Header.scss';
 
-import levelName from '../Data/LevelName';
+import TitleList from './TitleList';
 
-function Header() {
-    let levels = levelName.map(item => {
-        return (
-            <li key = {item.key} className = 'theme'>
-                {item.name}
-            </li>
-        )
-    });
-
+function Header({ totalScore, currentTheme }) {
     return(
         <header>
             <div className = 'header-top'>
-                <h1>Games<span>osts</span></h1><p>Score: 0</p>
+                <h1>Games<span>osts</span></h1><p>Score: {totalScore}</p>
             </div>
-            <ul className = 'theme-list'>
-                {levels}
-            </ul>
+            <TitleList currentTheme = {currentTheme} className = 'theme-list' />
         </header>
     )
 }

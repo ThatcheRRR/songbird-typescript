@@ -1,38 +1,3 @@
-header {
-  grid-area: header;
-  margin-top: 20px;
-  font-size: 25px; }
-  header h1 {
-    font-family: 'GreatVibes'; }
-    header h1 > span {
-      font-family: 'GreatVibes';
-      color: #008966; }
-  header h1 + p {
-    font-size: 20px; }
-  header .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-  header .theme-list {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    font-size: 15px;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    overflow: hidden; }
-    header .theme-list .theme {
-      flex: 1 1;
-      padding: 10px;
-      text-align: center;
-      background-color: #008966; }
-      header .theme-list .theme:hover {
-        cursor: pointer; }
-      header .theme-list .theme.active {
-        background-color: #00bc8c; }
-
 @font-face {
   font-family: 'GreatVibes';
   src: url(e45e6e2ddb17d288adcbca370ea68500.ttf) format("truetype"); }
@@ -47,6 +12,9 @@ header {
   padding: 0;
   box-sizing: border-box;
   color: #fff; }
+
+h3 {
+  word-break: break-word; }
 
 .container {
   display: grid;
@@ -103,9 +71,11 @@ header {
     flex-wrap: wrap;
     overflow: hidden; }
     header .theme-list .theme {
+      display: inline-flex;
+      align-items: center;
       flex: 1 1;
       padding: 10px;
-      text-align: center;
+      justify-content: center;
       background-color: #008966; }
       header .theme-list .theme:hover {
         cursor: pointer; }
@@ -188,10 +158,44 @@ main {
     .question .game-info .game-name {
       text-align: center; } }
 
+.player {
+  width: 100%; }
+  .player .timeline {
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center; }
+    .player .timeline .time {
+      font-size: 0.75rem; }
+  .player .playpause {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    border-radius: 100%;
+    border: 2px solid #00bc8c; }
+    .player .playpause:hover {
+      cursor: pointer; }
+    .player .playpause .play-indicator {
+      color: #00bc8c; }
+  .player .progress-bar {
+    flex: 1 1;
+    margin: 0 10px; }
+  .player .volume {
+    display: flex;
+    align-items: center;
+    width: 100%; }
+    .player .volume-indicator {
+      margin-right: 10px;
+      color: #00bc8c; }
+      .player .volume-indicator:hover {
+        cursor: pointer; }
+
 .quiz {
   grid-area: quiz; }
   .quiz-list {
-    border-radius: 10px;
     overflow: hidden;
     list-style-type: none; }
     .quiz-list .answer {
@@ -201,6 +205,12 @@ main {
       padding: 15px 30px;
       border: 1px solid #666666;
       background-color: #404040; }
+      .quiz-list .answer:first-of-type {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px; }
+      .quiz-list .answer:last-of-type {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px; }
       .quiz-list .answer-indicator {
         margin-right: 10px;
         display: inline-block;
@@ -227,7 +237,8 @@ main {
   border-radius: 10px; }
   .description > img {
     width: 200px;
-    border-radius: 10px; }
+    border-radius: 10px;
+    align-self: center; }
   .description .game-info {
     padding-left: 30px;
     display: flex;

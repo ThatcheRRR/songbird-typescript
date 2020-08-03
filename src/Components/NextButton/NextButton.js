@@ -1,9 +1,9 @@
 import React from 'react';
 import './NextButton.scss';
 
-function NextButton(props) {
+function NextButton({ onChangeTitle }) {
     return(
-        <button>Next Level</button>
+        <button onClick = {onChangeTitle}>Next Level</button>
     );
 }
 

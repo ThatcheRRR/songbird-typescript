@@ -33,9 +33,11 @@ header {
         overflow: hidden;
 
         .theme {
+            display: inline-flex;
+            align-items: center;
             flex: 1 1;
             padding: 10px;
-            text-align: center;
+            justify-content: center;
             background-color: darken($color:#00bc8c, $amount: 10%);
 
             &:hover {
