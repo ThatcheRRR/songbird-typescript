@@ -8,20 +8,22 @@ import NextButton from '../NextButton/NextButton';
 
 import data from '../Data/Data';
 
-function Main({ onChangeTitle, currentTheme, gameForQuestion, onPickGame, gameId }) {
+function Main({ onChangeTitle, currentTheme, gameForQuestion, onPickGame, gameId, onPickedCorrect, isCorrect }) {
     let currentGames = data[currentTheme];
     let pickedGame = currentGames[gameId];
-    let itemForQuestion = currentGames[gameForQuestion]
+    let itemForQuestion = currentGames[gameForQuestion];
     return(
         <main>
             <Question
-                currentGames = {currentGames}
                 itemForQuestion = {itemForQuestion}
+                isCorrect = {isCorrect}
             />
             <Quiz
                 currentGames = {currentGames}
                 currentTheme = {currentTheme}
                 onPickGame = {onPickGame}
+                gameForQuestion = {gameForQuestion}
+                onPickedCorrect = {onPickedCorrect}
             />
             <Description
                 pickedGame = {pickedGame}

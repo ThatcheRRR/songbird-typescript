@@ -24,7 +24,10 @@ export default class App extends React.Component {
     }
 
     onChangeTitle() {
-        this.setState({ currentTheme: this.state.currentTheme + 1 });
+        this.setState({ 
+            currentTheme: this.state.currentTheme + 1,
+            gameId: null
+        });
     }
 
     onPickGame(id) {
@@ -48,6 +51,10 @@ export default class App extends React.Component {
                     gameForQuestion = {this.state.gameForQuestion}
                     onPickGame = {this.onPickGame}
                     gameId = {this.state.gameId}
+                    maxLevel = {maxLevel}
+                    maxScoreForAnswer = {maxScoreForAnswer}
+                    isCorrect = {this.state.isCorrect}
+                    onPickedCorrect = {this.onPickedCorrect}
                 />
             </div>
         )
