@@ -11,12 +11,12 @@ import data from '../Data/Data';
 function Main({ onChangeTitle, currentTheme, gameForQuestion, onPickGame, gameId }) {
     let currentGames = data[currentTheme];
     let pickedGame = currentGames[gameId];
-
+    let itemForQuestion = currentGames[gameForQuestion]
     return(
         <main>
             <Question
                 currentGames = {currentGames}
-                gameForQuestion = {gameForQuestion}
+                itemForQuestion = {itemForQuestion}
             />
             <Quiz
                 currentGames = {currentGames}
