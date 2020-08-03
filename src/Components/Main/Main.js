@@ -30,6 +30,7 @@ function Main({ onChangeTitle, currentTheme, gameForQuestion, onPickGame, gameId
             />
             <NextButton 
                 onChangeTitle = {onChangeTitle}
+                isCorrect = {isCorrect}
             />
         </main>
     )

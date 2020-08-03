@@ -26,7 +26,8 @@ export default class App extends React.Component {
     onChangeTitle() {
         this.setState({ 
             currentTheme: this.state.currentTheme + 1,
-            gameId: null
+            gameId: null,
+            isCorrect: false
         });
     }
 
