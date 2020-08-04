@@ -5,10 +5,10 @@ import questionImage from '../App/assets/question.png'
 
 import Player from '../Player/Player';
 
-function Question({ itemForQuestion, isCorrect }) {
+function Question({ itemForQuestion, isLevelDone }) {
     let item = {};
 
-    if(isCorrect) {
+    if(isLevelDone) {
         item = itemForQuestion;
     } else {
         item.name = '******';

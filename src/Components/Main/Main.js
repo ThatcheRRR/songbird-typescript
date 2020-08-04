@@ -6,31 +6,29 @@ import Quiz from '../Quiz/Quiz';
 import Description from '../Description/Description';
 import NextButton from '../NextButton/NextButton';
 
-import data from '../Data/Data';
-
-function Main({ onChangeTitle, currentTheme, gameForQuestion, onPickGame, gameId, onPickedCorrect, isCorrect }) {
-    let currentGames = data[currentTheme];
-    let pickedGame = currentGames[gameId];
-    let itemForQuestion = currentGames[gameForQuestion];
+function Main({ onChangeTitle, currentGames, onPickGame, itemForQuestion, isLevelDone, pickedGame, isCorrect, gameForQuestion, needRefresh, onChangeRefresh, canChange }) {
     return(
         <main>
             <Question
                 itemForQuestion = {itemForQuestion}
-                isCorrect = {isCorrect}
+                isLevelDone = {isLevelDone}
             />
             <Quiz
                 currentGames = {currentGames}
-                currentTheme = {currentTheme}
                 onPickGame = {onPickGame}
+                isLevelDone = {isLevelDone}
+                isCorrect = {isCorrect}
                 gameForQuestion = {gameForQuestion}
-                onPickedCorrect = {onPickedCorrect}
+                needRefresh = {needRefresh}
+                onChangeRefresh = {onChangeRefresh}
+                canChange = {canChange}
             />
             <Description
                 pickedGame = {pickedGame}
             />
             <NextButton 
                 onChangeTitle = {onChangeTitle}
-                isCorrect = {isCorrect}
+                isLevelDone = {isLevelDone}
             />
         </main>
     )

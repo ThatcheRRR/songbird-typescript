@@ -1,19 +1,19 @@
 import React from 'react';
 import './NextButton.scss';
 
-function NextButton({ onChangeTitle, isCorrect }) {
+function NextButton({ onChangeTitle, isLevelDone }) {
 
     let className = '';
 
     function checkCorrect() {
-        if(isCorrect) {
+        if(isLevelDone) {
             onChangeTitle();
         } else {
             return;
         }
     }
 
-    if(isCorrect) {
+    if(isLevelDone) {
         className += 'next'
     }
 

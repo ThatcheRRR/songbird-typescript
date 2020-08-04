@@ -1,20 +1,53 @@
 import React from 'react';
+import Indicator from './Indicator';
 
-function QuizItem({ gameName, onPickGame, gameId, onPickedCorrect, gameForQuestion }) {
+class QuizItem extends React.Component {
+    constructor(props) {
+        super(props);
 
-    function pickingGame(id) {
-        onPickGame(id);
-        if(id === gameForQuestion) {
-            onPickedCorrect();
+        this.state = {
+            isClicked: false,
+            isCorrect: false,
+            canChange: true,
+            isDefault: false
+        }
+
+        this.pickingGame = this.pickingGame.bind(this);
+    }
+
+    pickingGame(id) {
+        this.props.onPickGame(id);
+        this.setState({ isClicked: true });
+        if(this.props.gameForQuestion === id) {
+            this.setState({ isCorrect: true });
+        }
+
+        if(this.props.isLevelDone && !this.state.isClicked) {
+            this.setState({ isDefault: true, canChange: false })
         }
     }
 
-    return(
-        <li className = 'answer' onClick = {() => pickingGame(gameId)}>
-            <span className = 'answer-indicator'></span>
-            {gameName}
-        </li>
-    );
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.isClicked && prevProps !== this.props && this.props.needRefresh) {
+            this.setState({ isClicked: false, isCorrect: false, isDefault: false, canChange: true });
+            this.props.onChangeRefresh();
+        }
+    }
+
+    render() {
+        return(
+            <li className = 'answer' onClick = {() => this.pickingGame(this.props.itemId)}>
+                <Indicator
+                    isClicked = {this.state.isClicked}
+                    isCorrect = {this.state.isCorrect}
+                    canChange = {this.state.canChange}
+                    isDefault = {this.state.isDefault}
+                />
+                {this.props.gameName}
+            </li>
+        );
+    }
 }
+    
 
 export default QuizItem;

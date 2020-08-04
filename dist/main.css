@@ -211,16 +211,16 @@ main {
       .quiz-list .answer:last-of-type {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px; }
-      .quiz-list .answer-indicator {
+      .quiz-list .answer > span {
         margin-right: 10px;
         display: inline-block;
         height: 8px;
         width: 8px;
         border-radius: 100%;
         background-color: #c4c4c4; }
-        .quiz-list .answer-indicator.correct {
+        .quiz-list .answer > span.correct {
           background-color: #00bc8c; }
-        .quiz-list .answer-indicator.wrong {
+        .quiz-list .answer > span.wrong {
           background-color: #d62c1a; }
       .quiz-list .answer:hover {
         background-color: #666666;
