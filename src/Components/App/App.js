@@ -15,7 +15,6 @@ export default class App extends React.Component {
             gameId: null,
             isLevelDone: false,
             isGameDone: false,
-            isCorrect: false,
             needRefresh: false,
             wrongAnswers: 0,
             gameForQuestion: Math.floor(Math.random() * 6),
@@ -33,9 +32,8 @@ export default class App extends React.Component {
             gameId: null,
             isLevelDone: false,
             gameForQuestion: Math.floor(Math.random() * 6),
-            isCorrect: false,
             needRefresh: true,
-            wrongAnswers: 0
+            wrongAnswers: 0,
         });
     }
 
@@ -47,9 +45,16 @@ export default class App extends React.Component {
         this.setState({ gameId: id });
         if(id === this.state.gameForQuestion) {
             this.setState((state) => {
+                let newScore;
+
+                if(this.state.isLevelDone) {
+                    newScore = state.totalScore;
+                } else {
+                    newScore = state.totalScore + 5 - this.state.wrongAnswers;
+                }
+
                 return {
-                    totalScore: state.totalScore + 5 - this.state.wrongAnswers,
-                    isCorrect: true,
+                    totalScore: newScore,
                     isLevelDone: true,
                 }
             });
@@ -59,7 +64,7 @@ export default class App extends React.Component {
     onPickWrongAnswer() {
         this.setState((state) => {
             return {
-                wrongAnswers: state.wrongAnswers + 1
+                wrongAnswers: state.wrongAnswers + 1,
             }
         })
     }
@@ -83,7 +88,6 @@ export default class App extends React.Component {
                     itemForQuestion = {itemForQuestion}
                     currentGames = {currentGames}
                     needRefresh = {this.state.needRefresh}
-                    isCorrect = {this.state.isCorrect}
                     onChangeRefresh = {this.onChangeRefresh}
                     onPickWrongAnswer = {this.onPickWrongAnswer}
                 />

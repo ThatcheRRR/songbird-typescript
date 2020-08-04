@@ -6,7 +6,7 @@ import Quiz from '../Quiz/Quiz';
 import Description from '../Description/Description';
 import NextButton from '../NextButton/NextButton';
 
-function Main({ onChangeTitle, currentGames, onPickGame, itemForQuestion, isLevelDone, pickedGame, isCorrect, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
+function Main({ onChangeTitle, currentGames, onPickGame, itemForQuestion, isLevelDone, pickedGame, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
     return(
         <main>
             <Question
@@ -17,7 +17,6 @@ function Main({ onChangeTitle, currentGames, onPickGame, itemForQuestion, isLeve
                 currentGames = {currentGames}
                 onPickGame = {onPickGame}
                 isLevelDone = {isLevelDone}
-                isCorrect = {isCorrect}
                 gameForQuestion = {gameForQuestion}
                 needRefresh = {needRefresh}
                 onChangeRefresh = {onChangeRefresh}
