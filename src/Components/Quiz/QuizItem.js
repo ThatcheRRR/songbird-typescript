@@ -25,6 +25,10 @@ class QuizItem extends React.Component {
         if(this.props.isLevelDone && !this.state.isClicked) {
             this.setState({ isDefault: true, canChange: false })
         }
+
+        if(!this.state.isClicked && !this.state.isCorrect) {
+            this.props.onPickWrongAnswer();
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {

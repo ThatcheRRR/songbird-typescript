@@ -2,7 +2,7 @@ import React from 'react';
 
 import QuizItem from './QuizItem';
 
-function QuizList({ currentGames, onPickGame, isLevelDone, isCorrect, gameForQuestion, needRefresh, onChangeRefresh, canChange }) {
+function QuizList({ currentGames, onPickGame, isLevelDone, isCorrect, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
     let games = currentGames.map((item) => {
         return(
             <QuizItem
@@ -15,7 +15,7 @@ function QuizList({ currentGames, onPickGame, isLevelDone, isCorrect, gameForQue
             gameForQuestion = {gameForQuestion}
             needRefresh = {needRefresh}
             onChangeRefresh = {onChangeRefresh}
-            canChange = {canChange}
+            onPickWrongAnswer = {onPickWrongAnswer}
             />
         )
     });

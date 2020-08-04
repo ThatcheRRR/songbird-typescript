@@ -17,13 +17,14 @@ export default class App extends React.Component {
             isGameDone: false,
             isCorrect: false,
             needRefresh: false,
-            canChange: true,
+            wrongAnswers: 0,
             gameForQuestion: Math.floor(Math.random() * 6),
         }
 
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onPickGame = this.onPickGame.bind(this);
-        this.onChangeRefresh = this.onChangeRefresh.bind(this)
+        this.onChangeRefresh = this.onChangeRefresh.bind(this);
+        this.onPickWrongAnswer = this.onPickWrongAnswer.bind(this);
     }
 
     onChangeTitle() {
@@ -34,7 +35,7 @@ export default class App extends React.Component {
             gameForQuestion: Math.floor(Math.random() * 6),
             isCorrect: false,
             needRefresh: true,
-            canChange: true
+            wrongAnswers: 0
         });
     }
 
@@ -45,12 +46,22 @@ export default class App extends React.Component {
     onPickGame(id) {
         this.setState({ gameId: id });
         if(id === this.state.gameForQuestion) {
-            this.setState({
-                isCorrect: true,
-                isLevelDone: true,
-                canChange: false
+            this.setState((state) => {
+                return {
+                    totalScore: state.totalScore + 5 - this.state.wrongAnswers,
+                    isCorrect: true,
+                    isLevelDone: true,
+                }
             });
         }
+    }
+
+    onPickWrongAnswer() {
+        this.setState((state) => {
+            return {
+                wrongAnswers: state.wrongAnswers + 1
+            }
+        })
     }
 
     render() {
@@ -74,7 +85,7 @@ export default class App extends React.Component {
                     needRefresh = {this.state.needRefresh}
                     isCorrect = {this.state.isCorrect}
                     onChangeRefresh = {this.onChangeRefresh}
-                    canChange = {this.state.canChange}
+                    onPickWrongAnswer = {this.onPickWrongAnswer}
                 />
             </div>
         )
