@@ -53,6 +53,7 @@ export default class App extends React.Component {
             if(!this.state.isLevelDone) {
                 onRight.play();
             }
+            
             this.setState((state) => {
                 let newScore;
 
