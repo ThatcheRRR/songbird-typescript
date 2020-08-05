@@ -2,8 +2,10 @@ import React from 'react';
 
 import QuizItem from './QuizItem';
 
-function QuizList({ currentGames, onPickGame, isLevelDone, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
-    let games = currentGames.map((item) => {
+import data from '../Data/Data';
+
+function QuizList({ currentTheme, onPickGame, isLevelDone, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
+    let games = data[currentTheme].map((item) => {
         return(
             <QuizItem
             key = {item.id}

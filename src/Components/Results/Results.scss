@@ -1,0 +1,28 @@
+main.results {
+    grid-template: auto 45px / 1fr;
+    grid-template-areas: 
+    "results results"
+    "button button";
+    text-align: center;
+}
+
+.result-info {
+    grid-area: results;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #404040;
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    & * {
+        width: 100%;
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+}

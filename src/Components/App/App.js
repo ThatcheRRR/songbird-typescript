@@ -4,8 +4,6 @@ import './App.scss';
 import Header from './../Header/Header';
 import Main from '../Main/Main';
 
-import data from '../Data/Data';
-
 import wrongSound from './assets/wrong.mp3';
 import rightSound from './assets/right.mp3';
 
@@ -30,6 +28,8 @@ export default class App extends React.Component {
         this.onPickGame = this.onPickGame.bind(this);
         this.onChangeRefresh = this.onChangeRefresh.bind(this);
         this.onPickWrongAnswer = this.onPickWrongAnswer.bind(this);
+        this.onRestartGame = this.onRestartGame.bind(this);
+        this.onGameDone = this.onGameDone.bind(this);
     }
 
     onChangeTitle() {
@@ -41,6 +41,19 @@ export default class App extends React.Component {
             needRefresh: true,
             wrongAnswers: 0,
         });
+    }
+
+    onRestartGame() {
+        this.setState({
+            totalScore: 0,
+            currentTheme: 0,
+            gameId: null,
+            isLevelDone: false,
+            isGameDone: false,
+            needRefresh: false,
+            wrongAnswers: 0,
+            gameForQuestion: Math.floor(Math.random() * 6),
+        })
     }
 
     onChangeRefresh() {
@@ -87,10 +100,13 @@ export default class App extends React.Component {
         onWrong.play();
     }
 
+    onGameDone() {
+        this.setState({
+            isGameDone: true
+        })
+    }
+
     render() {
-        let currentGames = data[this.state.currentTheme];
-        let pickedGame = currentGames[this.state.gameId];
-        let itemForQuestion = currentGames[this.state.gameForQuestion];
         return(
             <div className = 'container'>
                 <Header
@@ -102,12 +118,15 @@ export default class App extends React.Component {
                     gameForQuestion = {this.state.gameForQuestion}
                     onPickGame = {this.onPickGame}
                     isLevelDone = {this.state.isLevelDone}
-                    pickedGame = {pickedGame}
-                    itemForQuestion = {itemForQuestion}
-                    currentGames = {currentGames}
                     needRefresh = {this.state.needRefresh}
                     onChangeRefresh = {this.onChangeRefresh}
                     onPickWrongAnswer = {this.onPickWrongAnswer}
+                    onRestartGame = {this.onRestartGame}
+                    isGameDone = {this.state.isGameDone}
+                    totalScore = {this.state.totalScore}
+                    onGameDone = {this.onGameDone}
+                    currentTheme = {this.state.currentTheme}
+                    gameId = {this.state.gameId}
                 />
             </div>
         )

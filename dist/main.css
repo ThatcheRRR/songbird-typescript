@@ -85,13 +85,13 @@ header {
 main {
   grid-area: main;
   display: grid;
-  grid-template: auto auto 35px / 1fr 2fr;
+  grid-template: auto auto 45px / 1fr 2fr;
   grid-template-areas: 'question question' 'quiz description' 'button button';
   grid-gap: 25px; }
 
 @media (max-width: 768px) {
   main {
-    grid-template: auto auto auto 35px / auto;
+    grid-template: auto auto auto 45px / auto;
     grid-template-areas: "question" "quiz" "description" "button"; } }
 
 .question {
@@ -104,6 +104,7 @@ main {
   border: 1px solid #666666;
   border-radius: 10px; }
   .question > img {
+    align-self: center;
     width: 200px;
     border-radius: 10px; }
   .question .game-info {
@@ -117,40 +118,6 @@ main {
     margin-top: 10px;
     font-size: 2rem;
     font-weight: 500; }
-  .question .player {
-    width: 100%; }
-    .question .player .timeline {
-      margin-bottom: 20px;
-      display: flex;
-      width: 100%;
-      align-items: center; }
-      .question .player .timeline .time {
-        font-size: 0.75rem; }
-    .question .player .playpause {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      margin-right: 5px;
-      border-radius: 100%;
-      border: 2px solid #00bc8c; }
-      .question .player .playpause:hover {
-        cursor: pointer; }
-      .question .player .playpause .play-indicator {
-        color: #00bc8c; }
-    .question .player .progress-bar {
-      flex: 1 1;
-      margin: 0 10px; }
-    .question .player .volume {
-      display: flex;
-      align-items: center;
-      width: 100%; }
-      .question .player .volume-indicator {
-        margin-right: 10px;
-        color: #00bc8c; }
-        .question .player .volume-indicator:hover {
-          cursor: pointer; }
 
 @media (max-width: 664px) {
   .question .game-info {
@@ -161,7 +128,7 @@ main {
 .player {
   width: 100%; }
   .player .timeline {
-    margin-bottom: 20px;
+    margin: 30px 0;
     display: flex;
     width: 100%;
     align-items: center; }
@@ -186,7 +153,8 @@ main {
   .player .volume {
     display: flex;
     align-items: center;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 10px; }
     .player .volume-indicator {
       margin-right: 10px;
       color: #00bc8c; }
@@ -250,40 +218,6 @@ main {
     margin-top: 10px;
     font-size: 2rem;
     font-weight: 500; }
-  .description .player {
-    width: 100%; }
-    .description .player .timeline {
-      margin-bottom: 20px;
-      display: flex;
-      width: 100%;
-      align-items: center; }
-      .description .player .timeline .time {
-        font-size: 0.75rem; }
-    .description .player .playpause {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      margin-right: 5px;
-      border-radius: 100%;
-      border: 2px solid #00bc8c; }
-      .description .player .playpause:hover {
-        cursor: pointer; }
-      .description .player .playpause .play-indicator {
-        color: #00bc8c; }
-    .description .player .progress-bar {
-      flex: 1 1;
-      margin: 0 10px; }
-    .description .player .volume {
-      display: flex;
-      align-items: center;
-      width: 100%; }
-      .description .player .volume-indicator {
-        margin-right: 10px;
-        color: #00bc8c; }
-        .description .player .volume-indicator:hover {
-          cursor: pointer; }
 
 @media (max-width: 664px) {
   .description .game-info {
@@ -296,7 +230,8 @@ button {
   border-radius: 10px;
   border: 1px solid #666666;
   background-color: #404040;
-  outline: none; }
+  outline: none;
+  font-size: 1.2rem; }
   button:hover {
     cursor: pointer; }
   button:active {
@@ -305,4 +240,25 @@ button {
     background-color: #00bc8c; }
     button.next:hover {
       background-color: #00efb2; }
+  button .gameWon {
+    display: none; }
+
+main.results {
+  grid-template: auto 45px / 1fr;
+  grid-template-areas: "results results" "button button";
+  text-align: center; }
+
+.result-info {
+  grid-area: results;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  border-radius: 10px;
+  padding: 50px;
+  background-color: #404040; }
+  .result-info h1 {
+    font-size: 3rem; }
+  .result-info * {
+    width: 100%; }
+    .result-info *:not(:first-child) {
+      margin-top: 30px; }
 

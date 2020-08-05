@@ -9,6 +9,7 @@
     border-radius: 10px;
 
     & > img {
+        align-self: center;
         width: 200px;
         border-radius: 10px;
     }
@@ -27,60 +28,6 @@
             margin-top: 10px;
             font-size: 2rem;
             font-weight: 500;
-        }
-    }
-
-    .player {
-        width: 100%;
-
-        .timeline {
-            margin-bottom: 20px;
-            display: flex;
-            width: 100%;
-            align-items: center;
-
-            .time {
-                font-size: 0.75rem;
-            }
-        }
-
-        .playpause {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            margin-right: 5px;
-            border-radius: 100%;
-            border: 2px solid #00bc8c;
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            .play-indicator {
-                color: #00bc8c;
-            }
-        }
-
-        .progress-bar {
-            flex: 1 1;
-            margin: 0 10px;
-        }
-
-        .volume {
-            display: flex;
-            align-items: center;
-            width: 100%;
-
-            &-indicator {
-                margin-right: 10px;
-                color: #00bc8c;
-
-                &:hover {
-                    cursor: pointer;
-                }
-            }
         }
     }
 }

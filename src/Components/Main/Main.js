@@ -5,16 +5,41 @@ import Question from '../Question/Question';
 import Quiz from '../Quiz/Quiz';
 import Description from '../Description/Description';
 import NextButton from '../NextButton/NextButton';
+import Results from '../Results/Results';
 
-function Main({ onChangeTitle, currentGames, onPickGame, itemForQuestion, isLevelDone, pickedGame, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
+const maxScore = 30;
+
+function Main({ onChangeTitle,
+                onPickGame,
+                isLevelDone,
+                gameForQuestion,
+                needRefresh,
+                onChangeRefresh,
+                onPickWrongAnswer,
+                isGameDone,
+                onRestartGame,
+                totalScore,
+                onGameDone,
+                currentTheme,
+                gameId
+}) {
     return(
-        <main>
+        <main className = {isGameDone ? 'results' : ''}>
+            {isGameDone && 
+                <Results
+                    totalScore = {totalScore}
+                    maxScore = {maxScore}
+                />
+            }
+            {!isGameDone &&
+            <React.Fragment>
             <Question
-                itemForQuestion = {itemForQuestion}
+                gameForQuestion = {gameForQuestion}
                 isLevelDone = {isLevelDone}
+                currentTheme = {currentTheme}
             />
             <Quiz
-                currentGames = {currentGames}
+                currentTheme = {currentTheme}
                 onPickGame = {onPickGame}
                 isLevelDone = {isLevelDone}
                 gameForQuestion = {gameForQuestion}
@@ -23,11 +48,18 @@ function Main({ onChangeTitle, currentGames, onPickGame, itemForQuestion, isLeve
                 onPickWrongAnswer = {onPickWrongAnswer}
             />
             <Description
-                pickedGame = {pickedGame}
+                gameId = {gameId}
+                currentTheme = {currentTheme}
             />
+            </React.Fragment>}
             <NextButton 
                 onChangeTitle = {onChangeTitle}
                 isLevelDone = {isLevelDone}
+                onGameDone = {onGameDone}
+                onRestartGame = {onRestartGame}
+                isGameDone = {isGameDone}
+                currentTheme = {currentTheme}
+                isGameWon = {maxScore === totalScore}
             />
         </main>
     )

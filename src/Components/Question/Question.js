@@ -1,15 +1,17 @@
 import React from 'react';
 import './Question.scss';
 
-import questionImage from '../App/assets/question.png'
+import questionImage from './assets/question.png'
 
 import Player from '../Player/Player';
 
-function Question({ itemForQuestion, isLevelDone }) {
+import data from '../Data/Data';
+
+function Question({ gameForQuestion, isLevelDone, currentTheme }) {
     let item = {};
 
     if(isLevelDone) {
-        item = itemForQuestion;
+        item = data[currentTheme][gameForQuestion];
     } else {
         item.name = '******';
         item.image = questionImage;
