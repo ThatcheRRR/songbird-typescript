@@ -1,14 +1,22 @@
 import React from 'react';
 import './Results.scss';
+
 import winningImage from './assets/winningImage.jpg';
 
-function Results({ totalScore, maxScore }) {
+import maxScore from './assets/maxScore.mp3';
+
+function Results({ totalScore, isGameWon }) {
+    let congrats = new Audio(maxScore);
+
+    if(isGameWon) {
+        setTimeout(() => congrats.play(), 600)
+    }
 
     let winningScreen = 
     <React.Fragment>
         <img src = {winningImage} alt = 'winning poster' />
         <h2>Игра окончена!</h2>
-        <div>Вы набрали максимальное количество баллов!</div>
+        <div>Поздравляем! Вы набрали максимальное количество баллов! Вы настоящий гуру игровой индустрии!</div>
     </React.Fragment>;
 
     let loosingScreen = 
@@ -19,7 +27,7 @@ function Results({ totalScore, maxScore }) {
 
     return(
         <div className = 'result-info'>
-            {totalScore === maxScore ? winningScreen : loosingScreen}
+            {isGameWon ? winningScreen : loosingScreen}
         </div>
     );
 }

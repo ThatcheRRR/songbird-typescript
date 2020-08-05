@@ -7,8 +7,6 @@ import Description from '../Description/Description';
 import NextButton from '../NextButton/NextButton';
 import Results from '../Results/Results';
 
-const maxScore = 30;
-
 function Main({ onChangeTitle,
                 onPickGame,
                 isLevelDone,
@@ -21,14 +19,15 @@ function Main({ onChangeTitle,
                 totalScore,
                 onGameDone,
                 currentTheme,
-                gameId
+                gameId,
+                isGameWon
 }) {
     return(
         <main className = {isGameDone ? 'results' : ''}>
             {isGameDone && 
                 <Results
                     totalScore = {totalScore}
-                    maxScore = {maxScore}
+                    isGameWon = {isGameWon}
                 />
             }
             {!isGameDone &&
@@ -59,7 +58,7 @@ function Main({ onChangeTitle,
                 onRestartGame = {onRestartGame}
                 isGameDone = {isGameDone}
                 currentTheme = {currentTheme}
-                isGameWon = {maxScore === totalScore}
+                isGameWon = {isGameWon}
             />
         </main>
     )

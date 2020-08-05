@@ -22,7 +22,10 @@ function Question({ gameForQuestion, isLevelDone, currentTheme }) {
             <img src = {item.image} alt = 'game poster' />
             <div className = 'game-info'>
                 <h3 className = 'game-name'>{item.name}</h3>
-                <Player />
+                <Player
+                    audio = {data[currentTheme][gameForQuestion].audio}
+                    isLevelDone = {isLevelDone}
+                />
             </div>
         </section>
     );

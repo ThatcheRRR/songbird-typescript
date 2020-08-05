@@ -17,7 +17,9 @@ function Description({ gameId, currentTheme }) {
         <img src = {pickedGame.image} alt = 'game poster' />
         <div className = 'game-info'>
             <h3 className = 'game-name'>{pickedGame.name}</h3>
-            <Player />
+            <Player
+                audio = {pickedGame.audio}
+            />
             <div className = 'game-description'>
                 {pickedGame.description}
             </div>

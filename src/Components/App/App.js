@@ -22,6 +22,7 @@ export default class App extends React.Component {
             needRefresh: false,
             wrongAnswers: 0,
             gameForQuestion: Math.floor(Math.random() * 6),
+            isGameWon: false
         }
 
         this.onChangeTitle = this.onChangeTitle.bind(this);
@@ -102,7 +103,8 @@ export default class App extends React.Component {
 
     onGameDone() {
         this.setState({
-            isGameDone: true
+            isGameDone: true,
+            isGameWon: true
         })
     }
 
@@ -127,6 +129,7 @@ export default class App extends React.Component {
                     onGameDone = {this.onGameDone}
                     currentTheme = {this.state.currentTheme}
                     gameId = {this.state.gameId}
+                    isGameWon = {this.state.isGameWon}
                 />
             </div>
         )
