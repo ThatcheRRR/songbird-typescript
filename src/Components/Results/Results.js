@@ -3,10 +3,10 @@ import './Results.scss';
 
 import winningImage from './assets/winningImage.jpg';
 
-import maxScore from './assets/maxScore.mp3';
+import maxScoreSound from './assets/maxScoreSound.mp3';
 
 function Results({ totalScore, isGameWon }) {
-    let congrats = new Audio(maxScore);
+    let congrats = new Audio(maxScoreSound);
 
     if(isGameWon) {
         setTimeout(() => congrats.play(), 600)
@@ -22,7 +22,7 @@ function Results({ totalScore, isGameWon }) {
     let loosingScreen = 
     <React.Fragment>
         <h1>Игра окончена!</h1>
-        <div>Вы набрали {totalScore} баллов из {maxScore} возможных!</div>
+        <div>Вы набрали {totalScore} баллов из 30 возможных!</div>
     </React.Fragment>
 
     return(

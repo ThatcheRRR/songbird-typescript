@@ -115,7 +115,7 @@ main {
     flex: 1 1 400px; }
   .question .game-name {
     width: 100%;
-    margin-top: 10px;
+    margin: 20px 0;
     font-size: 2rem;
     font-weight: 500; }
 
@@ -179,7 +179,7 @@ main {
     flex: 1 1 400px; }
   .description .game-name {
     width: 100%;
-    margin-top: 10px;
+    margin: 20px 0;
     font-size: 2rem;
     font-weight: 500; }
   .description .initial {

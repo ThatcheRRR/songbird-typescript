@@ -11,21 +11,21 @@ const data = [
             id: 1,
             name: 'Overwatch',
             description: 'разработана и выпущена компанией Blizzard Entertainment в 2016 году. В Overwatch две команды игроков по шесть человек ведут сражение на сложно устроенной карте; перед каждым сражением игроки выбирают себе персонажей-героев.',
-            image: 'https://киберспорт.рф/wp-content/uploads/2019/01/Overwatch.jpg',
+            image: 'https://pbs.twimg.com/media/DuE-k4FXcAATItZ.jpg',
             audio: 'https://storage.lightaudio.ru/39922439/13449780/Overwatch%20%E2%80%94%20Main%20Menu.mp3'
         },
         {
             id: 2,
             name: 'Valorant',
             description: 'разработана и издана компанией Riot Games в 2020 году. Valorant является первой игрой Riot Games в жанре шутера от первого лица. Игра является противостоянием двух команд по пять игроков, каждый из них играет в роли «агентов» с особенными способностями.',
-            image: 'https://upload.wikimedia.org/wikipedia/ru/c/cd/Valorant_poster.jpg',
+            image: 'https://i.playground.ru/e/xy0V17PAskJun_xqXk8DOQ.jpeg',
             audio: 'https://storage.lightaudio.ru/39923087/294df77a/Valorant%20OST%20%E2%80%94%20Main%20Theme.mp3'
         },
         {
             id: 3,
             name: 'Battlefield 4',
             description: 'двенадцатая по счету из серии игр Battlefield, разработанная компанией DICE и изданная Electronic Arts в 2013 году. Действие происходит через 6 лет после событий Battlefield 3 в 2020 году.',
-            image: 'https://cdn.lenta.ru/images/0000/0298/000002989721/pic_1364369964.jpg',
+            image: 'https://media.contentapi.ea.com/content/dam/gin/common/packart/bf4-pc.jpg',
             audio: 'https://storage.lightaudio.ru/1d614d73/15aece4d/Battlefield%204%20%E2%80%94%20Menu%20Theme.mp3'
         },
         {
@@ -39,7 +39,7 @@ const data = [
             id: 5,
             name: 'DOOM Eternal',
             description: 'разработана компанией id Software и издана Bethesda Softworks в 2020 году. Игрок берёт на себя роль Палача Рока, древнего демоноборца. Игра разделена на отдельные уровни, которые сочетают в себе научно-фантастическую и фэнтезийную тематику.',
-            image: 'https://technibuzz.com/wp-content/uploads/2019/01/Doom-Eternal-300x167.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/ru/8/8c/Обложка_Doom_Eternal.jpg',
             audio: 'https://storage.lightaudio.ru/39922745/125c590f/Mick%20Gordon%20%E2%80%94%20DOOM%20Eternal.mp3'
         }
     ],
@@ -48,42 +48,42 @@ const data = [
             id: 0,
             name: 'Mafia II',
             description: 'разработана компанией 2K Czech и издана в 2010 году. Игроку в роли Вито Скалетты необходимо путешествовать по городу Эмпайр-Бэй, общаться с различными персонажами, выполнять задания, заключающиеся в перестрелках, необходимости водить автомобиль и т. д.',
-            image: 'https://img1.goodfon.ru/original/1152x864/c/4a/igry-mafia-2-wallpers.jpg',
+            image: 'https://st.overclockers.ru/legacy/blog/378513/163310_O.jpeg',
             audio: 'https://storage.lightaudio.ru/39922440/28fe6857/Mafia%202%20%E2%80%94%20maim%20theme.mp3'
         },
         {
             id: 1,
             name: 'Grand Theft Auto: San Andreas',
             description: 'разработана студией Rockstar North и издана компанией Rockstar Games в 2004 году. Действие игры происходит в 1992 году, в окрестностях штата Сан-Андреас. Игрок управляет главным героем Карлом Джонсоном, афроамериканцем в возрасте около 25 лет.',
-            image: 'https://3.bp.blogspot.com/-ciTYv4GHePg/W7SEu5dfU2I/AAAAAAAAA0U/t57YWK3jR7IyCPxkIH_Z1uMiL_7_M9bmQCLcBGAs/s320/122.png',
+            image: 'https://upload.wikimedia.org/wikipedia/ru/7/75/Grand_Theft_Auto_San_Andreas.jpg',
             audio: 'https://storage.lightaudio.ru/72f4a0a/ca3d934/GTA%20SA%20%E2%80%94%20Menu%20Theme.mp3'
         },
         {
             id: 2,
             name: 'Saints Row: The Third',
             description: 'разработана компанией Volition, Inc и выпущена в 2011 году. Кампания происходит в вымышленном городе Стилпорте, куда Святые были вынуждены бежать из-за конфликта с Синдикатом.',
-            image: 'https://goodtorr.ru/wp-content/uploads/2018/07/Saints-Row-3-The-Third.jpg',
+            image: 'https://game-tips.ru/wp-content/uploads/2017/06/Saints-Row_-The-Third.jpg',
             audio: 'https://storage.lightaudio.ru/2c5b54d6/2260ca91/Saints%20Raw%20%E2%80%94%20main.mp3'
         },
         {
             id: 3,
             name: 'Watch Dogs 2',
             description: 'разработана компанией Ubisoft и выпущена в 2016 году. Главный герой игры — хакер, родом из Окленда, штат Калифорния, по имени Маркус Холлоуэй переезжает в Сан-Франциско, в сердце Кремниевой Долины, где, объединившись с группировкой активистов из организации DedSec.',
-            image: 'https://img1.goodfon.ru/original/800x480/7/9f/watch-dogs-2-ubisoft-game.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/8/86/Watch_Dogs_2_cover.jpg/274px-Watch_Dogs_2_cover.jpg',
             audio: 'https://storage.lightaudio.ru/39922534/2a50253/Watch%20Dogs%20%E2%80%94%20Main%20Menu%20theme.mp3'
         },
         {
             id: 4,
             name: 'The Saboteur',
             description: 'разработана Pandemic Studios и выпущена Electronic Arts в 2009 году. Действие происходит в Париже и его окрестностях. Город разделён на три оккупационные зоны, дороги между которыми перекрыты немецкими блокпостами.',
-            image: 'https://upload.wikimedia.org/wikipedia/uk/thumb/4/43/Official_Saboteur_Game_Cover_Art.JPG/256px-Official_Saboteur_Game_Cover_Art.JPG',
+            image: 'https://upload.wikimedia.org/wikipedia/ru/4/43/Official_Saboteur_Game_Cover_Art.JPG',
             audio: 'https://storage.lightaudio.ru/39934dbe/2ea34339/%D0%A0%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%B8%20%E2%80%94%20The%20Saboteur%20Theme.mp3'
         },
         {
             id: 5,
             name: 'Just Cause 2',
             description: 'разработана студией Avalanche Studios и выпущена Square Enix в 2010 году. Игрок управляет оперативником вымышленного Агентства Рико Родригесом. Его с напарницей посылают в островную республику Панау, расположенную в Юго-Восточной Азии. Управляет страной диктатор Малыш Панай — тиран и убийца с манией величия.',
-            image: 'https://i.pinimg.com/736x/63/1b/9b/631b9b9e3b538c8d10e6858d5563cd39--just-cause--pc-games.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/ru/1/15/Just_Cause_2_boxshot.jpg',
             audio: 'https://storage.lightaudio.ru/10b921ac/bd77834/Just%20Cause%202%20%E2%80%94%20Menu.mp3'
         }
     ],
@@ -92,21 +92,21 @@ const data = [
             id: 0,
             name: 'Tropico 5',
             description: 'разработана студией Haemimont Games и издана Kalypso Media в 2014 году. Игрок выступает в роли главы небольшого островного государства Тропико. Ему предстоит привести остров к процветанию и позаботиться о своей жизни, откладывая деньги на счёт в швейцарском банке.',
-            image: 'https://i.ebayimg.com/images/g/-KYAAOSwH9Jd1ox~/s-l400.jpg',
+            image: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/48deb0b7-f306-452f-9eb1-78793b450b6d/d7jdfq7-ae153b39-2f3b-47fe-befc-99c61c130184.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNDhkZWIwYjctZjMwNi00NTJmLTllYjEtNzg3OTNiNDUwYjZkXC9kN2pkZnE3LWFlMTUzYjM5LTJmM2ItNDdmZS1iZWZjLTk5YzYxYzEzMDE4NC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.iQdIqJRSbEIvnfXUqALEKKC_ccw9FtWjQ1g7z5Ly5tQ',
             audio: 'https://storage.lightaudio.ru/399226c0/13cf1e8f/Tropico%205%20%E2%80%94%20Motika.mp3'
         },
         {
             id: 1,
             name: 'Sid Meier’s Civilization VI',
             description: 'разработана Firaxis Games и выпущена в 2016 году. Игроку предстоит посоревноваться в деле построения и развития своей собственной цивилизации, начав с маленького племени, постепенно расширяя свою империю с целью добиться господства над всей планетой.',
-            image: 'https://games.mail.ru/hotbox/content_files/article/31518/lead_pic/0b57b.jpeg',
+            image: 'https://i18.kanobu.ru/c/e215baa5ef710da7b3f3a67a7809d7d2/200x284/u.kanobu.ru/games/9b07e355-6beb-4ab1-a40c-1d66209111cb.png',
             audio: 'https://storage.lightaudio.ru/39972469/3bb5091f/Peter%20Hollens%20%E2%80%94%20Sogno%20Di%20Volare%20%28Civilization%20VI%20Main%20Theme%29.mp3'
         },
         {
             id: 2,
             name: 'Hearts of Iron IV',
             description: 'разработана студией Paradox Development Studio и издана Paradox Interactive в 2016 году. Hearts of Iron IV фокусируется на Второй мировой войне. Игрок может взять под своей правление любое государство на Земле, привести их к победе или поражению в войне против других государств.',
-            image: 'https://i.playground.ru/p/2vSqrRl-3AV0p_ciX1YaKQ.jpeg',
+            image: 'https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1j86.jpg',
             audio: 'https://storage.lightaudio.ru/399227c2/1191f5104/Hearts%20of%20Iron%20IV%20%E2%80%94%20Main%20Theme.mp3'
         },
         {
@@ -120,7 +120,7 @@ const data = [
             id: 4,
             name: 'XCOM 2',
             description: 'разработчик — Firaxis Games, издатель — 2K Games. Дата выпуска: 2016 год. Пришельцы победили в войне с армиями Земли, организация XCOM забыта и заброшена. Иноземные захватчики колонизировали планету и установили тотальный контроль над миром.',
-            image: 'https://stopga.me/images/blogs/2016/07/14/ZP5jjhmSa.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/XCOM_2_cover_art.jpg/220px-XCOM_2_cover_art.jpg',
             audio: 'https://storage.lightaudio.ru/38140d3c/166496d9/XCOM%202%20OST%20%E2%80%94%20Main%20Menu%20Theme.mp3'
         },
         {
@@ -136,14 +136,14 @@ const data = [
             id: 0,
             name: 'The Witcher 3: Wild Hunt',
             description: 'разработана студией CD Projekt RED по мотивам серии романов «Ведьмак», выпущена 2015 году. Игрок управляет ведьмаком Геральтом из Ривии, который путешествует по игровому миру, общается с неигровыми персонажами и выполняет различные задания, в частности, связанные с поиском сокровищ и охотой на чудовищ.',
-            image: 'https://i.playground.ru/p/y2PlHSV6nDGafqBZ9eZiWw.jpeg',
+            image: 'https://i.playground.ru/e/9thR9kr-oEyBmZSODTny6w.jpeg',
             audio: 'https://storage.lightaudio.ru/39922488/5901ccc14/The%20Witcher%203%20%E2%80%94%20Main%20Menu%20Theme.mp3'
         },
         {
             id: 1,
             name: 'The Elder Scrolls V: Skyrim',
             description: 'разработана студией Bethesda Game Studios и выпущена компанией Bethesda Softworks в 2010 году. События игры происходят спустя 200 лет после событий Oblivion. Великая война между Империей и Альдмерским Доминионом закончилась унизительным Конкордатом Белого Золота, ущемлявшим множество прав жителей Империи.',
-            image: 'https://showgamer.com/wp-content/uploads/2016/12/the_elder_scrolls_v_skyrim-1920x1080.jpg',
+            image: 'https://avatars.mds.yandex.net/get-entity_search/767653/295210449/SUx182_2x',
             audio: 'https://storage.lightaudio.ru/399223f5/30612a9e/The%20Elder%20Skrolls-Skirim%20%E2%80%94%20Menu.mp3'
         },
         {
@@ -157,7 +157,7 @@ const data = [
             id: 3,
             name: 'South Park: The Stick of Truth',
             description: 'разработана студией Obsidian Entertainment в 2014 году. В Южный Парк переезжает живущий с родителями новый мальчик. Родители отправляют его познакомиться с местными ребятами, и он сразу же встречает Баттерса. Баттерс отводит героя в крепость Купа — базу «людей», расположенную на заднем дворе Эрика Картмана.',
-            image: 'https://simkl.in/posters/67/6743508069c58b427_0.jpg',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxO1roht9p5LsELWSQewXm9qABgv7a7yf64_24BCTYYsivXR7GO8D8HA_wdbR-kK5-tzyt5Bq5d6auD5lbV4t75Dy4PZsQandUg9Y_&usqp=CAU&ec=45688578',
             audio: 'https://storage.lightaudio.ru/39924554/bbb43c8/South%20Park%3A%20The%20Stick%20of%20Truth%20%E2%80%94%20Main%20Menu.mp3'
         },
         {
@@ -252,7 +252,7 @@ const data = [
             id: 4,
             name: 'Beyond: Two Souls',
             description: 'разработана студией Quantic Dream и выпущена Sony Computer Entertainment в 2013 году. Игра сосредоточена на вопросах о том, что происходит после смерти. В центре событий находится молодая девушка Джоди Холмс, обладающая сверхъестественными способностями, она может общаться с потусторонним миром.',
-            image: 'https://www.gameaxis.com/wp-content/uploads/2013/09/RGB_BeyondTwoSouls_Preview.jpg',
+            image: 'https://i12.kanobu.ru/c/b504a7ac781490148de36c52f511ee66/200x284/u.kanobu.ru/games/83b298bc-665e-4ef9-94ee-99ea84102b39.JPG',
             audio: 'https://storage.lightaudio.ru/1d5ea8ed/2dfd722/Beyond%3A%20Two%20Souls%20%E2%80%94%20Main%20Theme.mp3'
         },
         {

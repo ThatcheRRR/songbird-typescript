@@ -9,6 +9,7 @@ import rightSound from './assets/right.mp3';
 
 const onWrong = new Audio(wrongSound);
 const onRight = new Audio(rightSound);
+const maxScore = 30;
 
 export default class App extends React.Component {
     constructor(props) {
@@ -104,8 +105,8 @@ export default class App extends React.Component {
     onGameDone() {
         this.setState({
             isGameDone: true,
-            isGameWon: true
-        })
+            isGameWon: this.state.totalScore === maxScore ? true : false
+        });
     }
 
     render() {
