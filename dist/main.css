@@ -22,7 +22,7 @@ h3 {
   margin: 0 auto;
   grid-template: auto auto / 1fr;
   grid-row-gap: 25px;
-  grid-template-areas: 'header' 'main'; }
+  grid-template-areas: 'header' 'main'; }
 
 body {
   background-color: #242424; }
@@ -182,6 +182,8 @@ main {
     margin-top: 10px;
     font-size: 2rem;
     font-weight: 500; }
+  .description .initial {
+    width: 100%; }
 
 @media (max-width: 664px) {
   .description .game-info {
