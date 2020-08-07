@@ -4,11 +4,8 @@ import './Description.scss';
 import Initial from './Initial';
 import Player from '../Player/Player';
 
-import data from '../Data/Data';
-
-function Description({ gameId, currentTheme }) {
+function Description({ gameId, currentTheme, data }) {
     let pickedGame = data[currentTheme][gameId];
-
     return(
     <section className = "description">
         {!pickedGame && <Initial />}

@@ -9,7 +9,7 @@ function Results({ totalScore, isGameWon }) {
     let congrats = new Audio(maxScoreSound);
 
     if(isGameWon) {
-        setTimeout(() => congrats.play(), 600)
+        setTimeout(() => congrats.play(), 500)
     }
 
     let winningScreen = 

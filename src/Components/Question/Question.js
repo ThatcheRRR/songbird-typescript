@@ -7,7 +7,7 @@ import Player from '../Player/Player';
 
 import data from '../Data/Data';
 
-function Question({ gameForQuestion, isLevelDone, currentTheme }) {
+function Question({ gameForQuestion, isLevelDone, currentTheme, data }) {
     let item = {};
 
     if(isLevelDone) {

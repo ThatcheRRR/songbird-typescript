@@ -23,12 +23,10 @@ function NextButton({ onChangeTitle, isLevelDone, isGameDone, onRestartGame, cur
         className = 'next'
     }
 
-    if(isGameWon) {
-        className += ' gameWon';
-    }
+    let buttonText = isGameWon && isGameDone ? 'Повторить рекорд' : !isGameWon && isGameDone ? 'Попробовать ещё раз!' : 'Next Level';
 
     return(
-        <button className = {className} onClick = {isGameDone ? onRestartGame : checkCorrect}>{isGameDone ? 'Попробовать ещё раз!' : 'Next Level'}</button>
+        <button className = {className} onClick = {isGameDone ? onRestartGame : checkCorrect}>{buttonText}</button>
     );
 }
 

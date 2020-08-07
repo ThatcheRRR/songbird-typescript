@@ -7,6 +7,8 @@ import Main from '../Main/Main';
 import wrongSound from './assets/wrong.mp3';
 import rightSound from './assets/right.mp3';
 
+import data from '../Data/Data';
+
 const onWrong = new Audio(wrongSound);
 const onRight = new Audio(rightSound);
 const maxScore = 30;
@@ -23,7 +25,7 @@ export default class App extends React.Component {
             needRefresh: false,
             wrongAnswers: 0,
             gameForQuestion: Math.floor(Math.random() * 6),
-            isGameWon: false
+            isGameWon: false,
         }
 
         this.onChangeTitle = this.onChangeTitle.bind(this);
@@ -32,6 +34,16 @@ export default class App extends React.Component {
         this.onPickWrongAnswer = this.onPickWrongAnswer.bind(this);
         this.onRestartGame = this.onRestartGame.bind(this);
         this.onGameDone = this.onGameDone.bind(this);
+    }
+
+    componentDidMount() {
+        console.log(`Ответ: ${data[this.state.currentTheme][this.state.gameForQuestion].name}`);
+    }
+
+    componentDidUpdate(_, prevState) {
+        if(this.state.currentTheme !== prevState.currentTheme && this.state.currentTheme < 6) {
+            console.log(`Ответ: ${data[this.state.currentTheme][this.state.gameForQuestion].name}`);
+        }
     }
 
     onChangeTitle() {
@@ -131,6 +143,7 @@ export default class App extends React.Component {
                     currentTheme = {this.state.currentTheme}
                     gameId = {this.state.gameId}
                     isGameWon = {this.state.isGameWon}
+                    data = {data}
                 />
             </div>
         )

@@ -55,3 +55,9 @@ input::-webkit-slider-thumb {
     border-radius: 50%;
 	background: #00bc8c;
 }
+
+@media (max-width: 768px) {
+    .container {
+        margin-bottom: 30px;
+    }
+}

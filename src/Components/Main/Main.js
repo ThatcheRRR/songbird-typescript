@@ -20,7 +20,8 @@ function Main({ onChangeTitle,
                 onGameDone,
                 currentTheme,
                 gameId,
-                isGameWon
+                isGameWon,
+                data
 }) {
     return(
         <main className = {isGameDone ? 'results' : ''}>
@@ -36,6 +37,7 @@ function Main({ onChangeTitle,
                 gameForQuestion = {gameForQuestion}
                 isLevelDone = {isLevelDone}
                 currentTheme = {currentTheme}
+                data = {data}
             />
             <Quiz
                 currentTheme = {currentTheme}
@@ -49,6 +51,7 @@ function Main({ onChangeTitle,
             <Description
                 gameId = {gameId}
                 currentTheme = {currentTheme}
+                data = {data}
             />
             </React.Fragment>}
             <NextButton 
