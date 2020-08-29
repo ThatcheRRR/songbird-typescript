@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'GreatVibes';
-    src: url('./assets/GreatVibes-Regular.ttf') format('truetype');
+    font-family: 'Pricedown';
+    src: url('./assets/Pricedown.ttf') format('truetype');
 }
 
 @font-face {
@@ -22,7 +22,8 @@ h3 {
 
 .container {
     display: grid;
-    width: 95vw;
+    max-width: 95vw;
+    width: 1240px;
     margin: 0 auto;
     grid-template: auto auto / 1fr;
     grid-row-gap: 25px;

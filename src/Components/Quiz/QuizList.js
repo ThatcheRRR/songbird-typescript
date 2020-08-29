@@ -1,22 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import QuizItem from './QuizItem';
 
 import data from '../Data/Data';
 
-function QuizList({ currentTheme, onPickGame, isLevelDone, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
+function QuizList({ currentTheme }) {
     let games = data[currentTheme].map((item) => {
         return(
             <QuizItem
-            key = {item.id}
-            gameName = {item.name}
-            itemId = {item.id}
-            onPickGame = {onPickGame}
-            isLevelDone = {isLevelDone}
-            gameForQuestion = {gameForQuestion}
-            needRefresh = {needRefresh}
-            onChangeRefresh = {onChangeRefresh}
-            onPickWrongAnswer = {onPickWrongAnswer}
+                key = {item.id}
+                gameName = {item.name}
+                itemId = {item.id}
             />
         )
     });
@@ -28,4 +23,10 @@ function QuizList({ currentTheme, onPickGame, isLevelDone, gameForQuestion, need
     );
 }
 
-export default QuizList;
+const mapStateToProps = state => {
+    return {
+        currentTheme: state.currentTheme
+    }
+};
+
+export default connect(mapStateToProps)(QuizList);

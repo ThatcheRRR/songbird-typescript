@@ -1,17 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Header.scss';
 
 import TitleList from './TitleList';
 
-function Header({ totalScore, currentTheme }) {
+const Header = ({ totalScore }) => {
     return(
         <header>
             <div className = 'header-top'>
                 <h1>Games<span>osts</span></h1><p>Score: {totalScore}</p>
             </div>
-            <TitleList currentTheme = {currentTheme} className = 'theme-list' />
+            <TitleList className = 'theme-list' />
         </header>
     )
 }
 
-export default Header;
+const mapStateToProps = state => ({ totalScore: state.totalScore });
+
+export default connect(mapStateToProps)(Header);

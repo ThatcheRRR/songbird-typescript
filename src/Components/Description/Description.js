@@ -1,16 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Description.scss';
 
 import Initial from './Initial';
 import Player from '../Player/Player';
 
-function Description({ gameId, currentTheme, data }) {
+import data from '../Data/Data';
+
+function Description({ gameId, currentTheme }) {
     let pickedGame = data[currentTheme][gameId];
     return(
     <section className = "description">
         {!pickedGame && <Initial />}
         {pickedGame && 
-        <React.Fragment>
+        <>
         <img src = {pickedGame.image} alt = 'game poster' />
         <div className = 'game-info'>
             <h3 className = 'game-name'>{pickedGame.name}</h3>
@@ -21,9 +24,16 @@ function Description({ gameId, currentTheme, data }) {
                 {pickedGame.description}
             </div>
         </div>
-        </React.Fragment>}
+        </>}
     </section>
     );
 }
 
-export default Description;
+const mapStateToProps = state => {
+    return {
+        gameId: state.gameId,
+        currentTheme: state.currentTheme
+    }
+}
+
+export default connect(mapStateToProps)(Description);

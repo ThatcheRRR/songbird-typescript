@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import './Question.scss';
 
 import questionImage from './assets/question.png'
@@ -7,8 +8,14 @@ import Player from '../Player/Player';
 
 import data from '../Data/Data';
 
-function Question({ gameForQuestion, isLevelDone, currentTheme, data }) {
+const Question = ({ gameForQuestion, isLevelDone, currentTheme }) => {
     let item = {};
+
+    const rightAnswer = data[currentTheme][gameForQuestion];
+
+    useEffect(() => {
+        console.log(`Ответ: ${rightAnswer.name}`);
+    }, [currentTheme]);
 
     if(isLevelDone) {
         item = data[currentTheme][gameForQuestion];
@@ -23,7 +30,7 @@ function Question({ gameForQuestion, isLevelDone, currentTheme, data }) {
             <div className = 'game-info'>
                 <h3 className = 'game-name'>{item.name}</h3>
                 <Player
-                    audio = {data[currentTheme][gameForQuestion].audio}
+                    audio = {rightAnswer.audio}
                     isLevelDone = {isLevelDone}
                 />
             </div>
@@ -31,4 +38,12 @@ function Question({ gameForQuestion, isLevelDone, currentTheme, data }) {
     );
 }
 
-export default Question;
+const mapStateToProps = state => {
+    return {
+        gameForQuestion: state.gameForQuestion,
+        isLevelDone: state.isLevelDone,
+        currentTheme: state.currentTheme
+    }
+}
+
+export default connect(mapStateToProps)(Question);

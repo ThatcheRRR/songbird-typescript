@@ -232,7 +232,7 @@ const data = [
             name: 'The Walking Dead: The Game',
             description: 'разработана студией Telltale Games в 2012 году. Главным героем игры является персонаж Ли Эверетт. В момент начала зомби-апокалипсиса он находится под арестом, но оказывается на свободе и борется за выживание вместе с встреченной им 8-летней девочкой по имени Клементина.',
             image: 'https://vignette.wikia.nocookie.net/walkingdead/images/c/c3/WDG_Season_1_Original_Score.png/revision/latest?cb=20140410003043',
-            audio: 'https://data.ipleer.com/file/64894575/aEtrNGk0V2xGeHNDOWdyM0RYcVNTVXd2cHJ1ZEJVZWtDTlZDMDRzU2tSRk1kZXpRL2JaZjlEcW10cjA3RENKV3FPUVpES242RlhnY2Z0Y3pXTFN4R1JraWY3KzVnZGRLZ1dQYzUxZGFBSEx2eGE0VjBIVmdsRHBKZDR6UGgzNnU/OST_The_Walking_Dead_Game_-_Main_Theme_(iPleer.com).mp3'
+            audio: 'https://data.ipleer.com/listen/64894575/VStFTU9lNG5XQ2lYa29XOTY4RkU1Tk9Ody9EYTRxbEErd1RFUk8xNkZpaVFEQ2lnSnB5c0x4OW9lUDBiN3lYb1JUOFp1UFIvd0tkbUVscGtFbmZHT2gySGRMdUgwWjF4RDROb1lYeElmdG5KcFNHZEQ2SEx3cWF4OXFZVnIxVlE/OST_The_Walking_Dead_Game_-_Main_Theme_(iPleer.com).mp3'
         },
         {
             id: 2,

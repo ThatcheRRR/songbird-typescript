@@ -1,7 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './NextButton.scss';
 
+import { onChangeTitle, onRestartGame, onGameDone } from '../../redux/actions';
+
 const maxLevel = 5;
+const actions = {
+    onChangeTitle,
+    onRestartGame,
+    onGameDone
+}
 
 function NextButton({ onChangeTitle, isLevelDone, isGameDone, onRestartGame, currentTheme, onGameDone, isGameWon }) {
 
@@ -30,4 +38,13 @@ function NextButton({ onChangeTitle, isLevelDone, isGameDone, onRestartGame, cur
     );
 }
 
-export default NextButton;
+const mapStateToProps = state => {
+    return {
+        isLevelDone: state.isLevelDone,
+        isGameDone: state.isGameDone,
+        isGameWon: state.isGameWon,
+        currentTheme: state.currentTheme
+    }
+}
+
+export default connect(mapStateToProps, actions)(NextButton);

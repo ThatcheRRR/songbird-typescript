@@ -1,29 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import './Results.scss';
+
+import { onGameWon } from '../../redux/actions';
 
 import winningImage from './assets/winningImage.jpg';
 
-import maxScoreSound from './assets/maxScoreSound.mp3';
+const maxScore = 30;
 
 function Results({ totalScore, isGameWon }) {
-    let congrats = new Audio(maxScoreSound);
+    const dispatch = useDispatch();
 
-    if(isGameWon) {
-        setTimeout(() => congrats.play(), 500)
-    }
+    useEffect(() => {
+        if(totalScore === maxScore) {
+            dispatch(onGameWon());
+        }
+    }, []);
 
-    let winningScreen = 
-    <React.Fragment>
+    const winningScreen = 
+    <>
         <img src = {winningImage} alt = 'winning poster' />
         <h2>Игра окончена!</h2>
         <div>Поздравляем! Вы набрали максимальное количество баллов! Вы настоящий гуру игровой индустрии!</div>
-    </React.Fragment>;
+    </>;
 
-    let loosingScreen = 
-    <React.Fragment>
+    const loosingScreen = 
+    <>
         <h1>Игра окончена!</h1>
         <div>Вы набрали {totalScore} баллов из 30 возможных!</div>
-    </React.Fragment>
+    </>
 
     return(
         <div className = 'result-info'>
@@ -32,4 +37,11 @@ function Results({ totalScore, isGameWon }) {
     );
 }
 
-export default Results;
+const mapStateToProps = state => {
+    return {
+        totalScore: state.totalScore,
+        isGameWon: state.isGameWon
+    }
+};
+
+export default connect(mapStateToProps)(Results);

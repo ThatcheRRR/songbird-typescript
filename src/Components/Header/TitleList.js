@@ -1,17 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import TitleItem from './TitleItem';
 
 import levelName from '../Data/LevelName';
 
-function TitleList({ currentTheme }) {
+const TitleList = ({ currentTheme }) => {
     let levels = levelName.map((item, ind) => {
         let currentTitle = 'theme'
         if(ind === currentTheme) {
             currentTitle += ' active';
         }
         return (
-            <TitleItem name = {item.name} key = {item.key} currentTitle = {currentTitle} />
+            <TitleItem
+                name = {item.name}
+                key = {item.key}
+                currentTitle = {currentTitle} 
+            />
         )
     });
 
@@ -22,4 +27,6 @@ function TitleList({ currentTheme }) {
     )
 }
 
-export default TitleList;
+const mapStateToProps = state => ({ currentTheme: state.currentTheme });
+
+export default connect(mapStateToProps)(TitleList);

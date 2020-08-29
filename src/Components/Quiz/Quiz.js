@@ -3,18 +3,10 @@ import './Quiz.scss';
 
 import QuizList from './QuizList';
 
-function Quiz({ currentTheme, onPickGame, isLevelDone, gameForQuestion, needRefresh, onChangeRefresh, onPickWrongAnswer }) {
+function Quiz() {
     return(
         <section className = 'quiz'>
-            <QuizList
-            currentTheme = {currentTheme}
-            onPickGame = {onPickGame}
-            isLevelDone = {isLevelDone}
-            gameForQuestion = {gameForQuestion}
-            needRefresh = {needRefresh}
-            onChangeRefresh = {onChangeRefresh}
-            onPickWrongAnswer = {onPickWrongAnswer}
-            />
+            <QuizList />
         </section>
     )
 }
