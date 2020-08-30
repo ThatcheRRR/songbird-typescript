@@ -1,0 +1,49 @@
+.quiz {
+    grid-area: quiz;
+
+    &-list {
+        overflow: hidden;
+        list-style-type: none;
+
+        .answer {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 15px 30px;
+            border: 1px solid lighten($color: #404040, $amount: 15%);
+            background-color: #404040;
+
+            &:first-of-type {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            & > span {
+                margin-right: 10px;
+                display: inline-block;
+                height: 8px;
+                width: 8px;
+                border-radius: 100%;
+                background-color: #c4c4c4;
+
+                &.correct {
+                    background-color: #00bc8c;
+                }
+
+                &.wrong {
+                    background-color: #d62c1a;
+                }
+            }
+
+            &:hover {
+                background-color: lighten($color: #404040, $amount: 15%);
+                cursor: pointer;
+            }
+        }
+    }
+}
