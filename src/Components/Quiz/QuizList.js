@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import QuizItem from './QuizItem';
 import data from '../../data/data';
 
-function QuizList() {
+const QuizList = () => {
     const currentTheme = useSelector(state => state.currentTheme);
     let games = data[currentTheme].map((item) => {
         return(

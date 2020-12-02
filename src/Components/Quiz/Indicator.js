@@ -1,6 +1,11 @@
 import React from 'react';
 
-function Indicator({ isClicked, isCorrect, canChange, isDefault }) {
+const Indicator = ({
+    isClicked,
+    isCorrect,
+    canChange,
+    isDefault
+}) => {
     let className = '';
     if(isClicked && isCorrect && canChange) {
         className = 'correct';

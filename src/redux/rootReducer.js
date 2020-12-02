@@ -1,7 +1,7 @@
 import { WRONG_ANSWER, CHANGE_TITLE, PICKED_GAME, REFRESH, RESTART_GAME, GAME_DONE, GAME_WON } from './types';
 
-import wrongSound from '../Components/App/assets/wrong.mp3';
-import rightSound from '../Components/App/assets/right.mp3';
+import wrongSound from '../assets/wrong.mp3';
+import rightSound from '../assets/right.mp3';
 
 const onWrong = new Audio(wrongSound);
 const onRight = new Audio(rightSound);

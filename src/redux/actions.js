@@ -1,6 +1,6 @@
 import { CHANGE_TITLE, GAME_DONE, REFRESH, WRONG_ANSWER, PICKED_GAME, RESTART_GAME, GAME_WON } from './types';
 
-import maxScoreSound from '../Components/Results/assets/maxScoreSound.mp3';
+import maxScoreSound from '../assets/maxScoreSound.mp3';
 
 export const onChangeTitle = () => {
     return {

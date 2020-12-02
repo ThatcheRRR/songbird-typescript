@@ -1,19 +1,16 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import './Results.scss';
 import { onGameWon } from '../../redux/actions';
-import winningImage from './assets/winningImage.jpg';
+import winningImage from '../../assets/winningImage.jpg';
 const maxScore = 30;
 
-function Results({ totalScore, isGameWon }) {
+const Results = ({ totalScore, isGameWon }) => {
     const dispatch = useDispatch();
-
     useEffect(() => {
         if(totalScore === maxScore) {
             dispatch(onGameWon());
         }
     }, []);
-
     const winningScreen = (
         <>
             <img src = {winningImage} alt = 'winning poster' />
@@ -21,7 +18,6 @@ function Results({ totalScore, isGameWon }) {
             <div>Поздравляем! Вы набрали максимальное количество баллов! Вы настоящий гуру игровой индустрии!</div>
         </>
     );
-
     const loosingScreen = (
         <>
             <h1>Игра окончена!</h1>

@@ -1,11 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './Main.scss';
-import Question from '../Question/Question';
-import Quiz from '../Quiz/Quiz';
-import Description from '../Description/Description';
-import NextButton from '../NextButton/NextButton';
-import Results from '../Results/Results';
+import Question from '../Question';
+import Quiz from '../Quiz';
+import Description from '../Description';
+import NextButton from '../NextButton';
+import Results from '../Results';
 
 const Main = () => {
     const isGameDone = useSelector(state => state.isGameDone);

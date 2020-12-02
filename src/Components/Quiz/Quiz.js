@@ -1,8 +1,7 @@
 import React from 'react';
 import QuizList from './QuizList';
-import './Quiz.scss';
 
-function Quiz() {
+const Quiz = () => {
     return(
         <section className = 'quiz'>
             <QuizList />
