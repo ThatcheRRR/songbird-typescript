@@ -3,12 +3,12 @@ import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 const LogIn = () => {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const { login } = useAuth()
-    const [error, setError] = useState('')
-    const [loading, setLoading] = useState(false)
-    const history = useHistory()
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const { login } = useAuth();
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -32,13 +32,13 @@ const LogIn = () => {
                     <label htmlFor = 'email'>
                         Email
                     </label>
-                    <input id = 'email' type = 'email' />
+                    <input id = 'email' type = 'email' ref = {emailRef} />
                 </div>
                 <div className = 'form__control'>
                     <label htmlFor = 'password'>
                         Password
                     </label>
-                    <input id = 'password' type = 'password' />
+                    <input id = 'password' type = 'password' ref = {passwordRef} />
                 </div>
                 <button disabled = {loading}>
                     Log In
