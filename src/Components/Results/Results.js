@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import './Results.scss';
-
 import { onGameWon } from '../../redux/actions';
-
 import winningImage from './assets/winningImage.jpg';
-
 const maxScore = 30;
 
 function Results({ totalScore, isGameWon }) {
@@ -17,18 +14,20 @@ function Results({ totalScore, isGameWon }) {
         }
     }, []);
 
-    const winningScreen = 
-    <>
-        <img src = {winningImage} alt = 'winning poster' />
-        <h2>Игра окончена!</h2>
-        <div>Поздравляем! Вы набрали максимальное количество баллов! Вы настоящий гуру игровой индустрии!</div>
-    </>;
+    const winningScreen = (
+        <>
+            <img src = {winningImage} alt = 'winning poster' />
+            <h2>Игра окончена!</h2>
+            <div>Поздравляем! Вы набрали максимальное количество баллов! Вы настоящий гуру игровой индустрии!</div>
+        </>
+    );
 
-    const loosingScreen = 
-    <>
-        <h1>Игра окончена!</h1>
-        <div>Вы набрали {totalScore} баллов из 30 возможных!</div>
-    </>
+    const loosingScreen = (
+        <>
+            <h1>Игра окончена!</h1>
+            <div>Вы набрали {totalScore} баллов из 30 возможных!</div>
+        </>
+    );
 
     return(
         <div className = 'result-info'>

@@ -1,7 +1,6 @@
 import React from 'react';
-import './Quiz.scss';
-
 import QuizList from './QuizList';
+import './Quiz.scss';
 
 function Quiz() {
     return(

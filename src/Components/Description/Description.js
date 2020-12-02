@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Description.scss';
-
 import Initial from './Initial';
 import Player from '../Player/Player';
-
-import data from '../Data/Data';
+import data from '../../data/data';
 
 function Description({ gameId, currentTheme }) {
     let pickedGame = data[currentTheme][gameId];

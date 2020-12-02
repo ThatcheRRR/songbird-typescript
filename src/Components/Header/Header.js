@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './Header.scss';
-
 import TitleList from './TitleList';
 
-const Header = ({ totalScore }) => {
+const Header = () => {
+    const totalScore = useSelector(state => state.totalScore);
     return(
         <header>
             <div className = 'header-top'>
@@ -15,6 +15,4 @@ const Header = ({ totalScore }) => {
     )
 }
 
-const mapStateToProps = state => ({ totalScore: state.totalScore });
-
-export default connect(mapStateToProps)(Header);
+export default Header;

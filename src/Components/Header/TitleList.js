@@ -1,22 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import levelName from '../../data/levelName';
 
-import TitleItem from './TitleItem';
-
-import levelName from '../Data/LevelName';
-
-const TitleList = ({ currentTheme }) => {
+const TitleList = () => {
+    const currentTheme = useSelector(state => state.currentTheme);
     let levels = levelName.map((item, ind) => {
         let currentTitle = 'theme'
         if(ind === currentTheme) {
             currentTitle += ' active';
         }
         return (
-            <TitleItem
-                name = {item.name}
+            <li
                 key = {item.key}
-                currentTitle = {currentTitle} 
-            />
+                className = {currentTitle}
+            >
+                {item.name}
+            </li>
         )
     });
 
@@ -27,6 +26,4 @@ const TitleList = ({ currentTheme }) => {
     )
 }
 
-const mapStateToProps = state => ({ currentTheme: state.currentTheme });
-
-export default connect(mapStateToProps)(TitleList);
+export default TitleList;

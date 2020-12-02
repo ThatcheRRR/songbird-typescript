@@ -1,14 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { onPickGame, onChangeRefresh, onPickWrongAnswer } from '../../redux/actions';
-
+import Indicator from './Indicator';
 const actions = {
     onPickGame,
     onChangeRefresh,
     onPickWrongAnswer
-}
-
-import Indicator from './Indicator';
+};
 
 class QuizItem extends React.Component {
     constructor(props) {

@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './NextButton.scss';
-
-import { onChangeTitle, onRestartGame, onGameDone } from '../../redux/actions';
+import {
+    onChangeTitle,
+    onRestartGame,
+    onGameDone
+} from '../../redux/actions';
 
 const maxLevel = 5;
 const actions = {
@@ -11,28 +14,30 @@ const actions = {
     onGameDone
 }
 
-function NextButton({ onChangeTitle, isLevelDone, isGameDone, onRestartGame, currentTheme, onGameDone, isGameWon }) {
-
+const NextButton = ({
+    onChangeTitle,
+    isLevelDone,
+    isGameDone,
+    onRestartGame,
+    currentTheme,
+    onGameDone,
+    isGameWon
+}) => {
     let className = '';
-
-    function checkCorrect() {
+    const checkCorrect = () => {
         if(isLevelDone) {
             onChangeTitle();
         } else {
             return;
         }
-
         if(currentTheme === maxLevel) {
             onGameDone();
         }
     }
-
     if(isLevelDone || isGameDone) {
         className = 'next'
     }
-
     let buttonText = isGameWon && isGameDone ? 'Повторить рекорд' : !isGameWon && isGameDone ? 'Попробовать ещё раз!' : 'Next Level';
-
     return(
         <button className = {className} onClick = {isGameDone ? onRestartGame : checkCorrect}>{buttonText}</button>
     );

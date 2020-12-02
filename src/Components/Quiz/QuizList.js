@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
+import { useSelector } from 'react-redux';
 import QuizItem from './QuizItem';
+import data from '../../data/data';
 
-import data from '../Data/Data';
-
-function QuizList({ currentTheme }) {
+function QuizList() {
+    const currentTheme = useSelector(state => state.currentTheme);
     let games = data[currentTheme].map((item) => {
         return(
             <QuizItem
@@ -23,10 +22,4 @@ function QuizList({ currentTheme }) {
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        currentTheme: state.currentTheme
-    }
-};
-
-export default connect(mapStateToProps)(QuizList);
+export default QuizList;

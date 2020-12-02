@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Question.scss';
-
 import questionImage from './assets/question.png'
-
 import Player from '../Player/Player';
-
-import data from '../Data/Data';
+import data from '../../data/data';
 
 const Question = ({ gameForQuestion, isLevelDone, currentTheme }) => {
     let item = {};
-
     const rightAnswer = data[currentTheme][gameForQuestion];
 
     useEffect(() => {

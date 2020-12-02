@@ -1,9 +1,7 @@
 import React from 'react';
 
 function Indicator({ isClicked, isCorrect, canChange, isDefault }) {
-
     let className = '';
-
     if(isClicked && isCorrect && canChange) {
         className = 'correct';
     } else if(isClicked && !isCorrect && canChange) {
