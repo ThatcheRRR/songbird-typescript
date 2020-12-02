@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState} from "react"
-import { auth } from "../utils/firebase"
+import React, {useContext, useEffect, useState} from 'react';
+import { auth } from '../utils/firebase';
 
 const AuthContext = React.createContext();
 
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext.Provider value = {value}>
             {!loading && children}
         </AuthContext.Provider>
     )
