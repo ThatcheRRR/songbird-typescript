@@ -17,7 +17,6 @@ class QuizItem extends React.Component {
             canChange: true,
             isDefault: false
         }
-
         this.pickingGame = this.pickingGame.bind(this);
     }
 
@@ -27,11 +26,9 @@ class QuizItem extends React.Component {
         if(this.props.gameForQuestion === id) {
             this.setState({ isCorrect: true });
         }
-
         if(this.props.isLevelDone && !this.state.isClicked) {
             this.setState({ isDefault: true, canChange: false })
         }
-
         if(!this.props.isLevelDone && !this.state.isClicked) {
             this.props.onPickWrongAnswer();
         }
