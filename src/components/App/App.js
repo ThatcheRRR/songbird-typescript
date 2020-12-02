@@ -1,17 +1,13 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { AuthProvider } from '../../context/AuthContext';
-import Header from '../Header';
-import Main from '../Main';
+import Container from '../Container';
 
 const App = () => {
     return(
         <Router>
             <AuthProvider>
-                <div className = 'container'>
-                    <Header />
-                    <Main />
-                </div>
+                <Route path = '/' exact component = {Container} />
             </AuthProvider>
         </Router>
     );
