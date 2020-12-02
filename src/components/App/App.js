@@ -3,6 +3,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import { AuthProvider } from '../../context/AuthContext';
 import Header from '../Header';
 import Main from '../Main';
+
 const App = () => {
     return(
         <Router>
