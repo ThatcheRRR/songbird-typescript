@@ -29,7 +29,15 @@ const SignUp = () => {
     }
     return (
         <div className = 'modal signup'>
-            <form className = 'form' onSubmit = {handleSubmit}>
+            {
+                error
+                && (
+                    <div className = 'modal__alert'>
+                        {error}
+                    </div>
+                )
+            }
+            <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Sign Up</h2>
                 <div className = 'form__control'>
                     <label htmlFor = 'email'>

@@ -11,7 +11,7 @@ const Header = () => {
     const history = useHistory();
 
     async function handleLogout() {
-        setError("");
+        setError('');
 
         try {
             await logout();
@@ -27,9 +27,9 @@ const Header = () => {
                     Games<span>osts</span>
                 </h1>
                 <div className = 'user-menu'>
-                    <div className = 'current-user'>
-                        {currentUser}
-                    </div>
+                    {/*<div className = 'current-user'>*/}
+                    {/*    {currentUser}*/}
+                    {/*</div>*/}
                     <button onClick = {handleLogout}>
                         Log Out
                     </button>

@@ -26,7 +26,15 @@ const LogIn = () => {
     }
     return (
         <div className = 'modal login'>
-            <form className = 'form' onSubmit = {handleSubmit}>
+            {
+                error
+                && (
+                    <div className = 'modal__alert'>
+                        {error}
+                    </div>
+                )
+            }
+            <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Log In</h2>
                 <div className = 'form__control'>
                     <label htmlFor = 'email'>
