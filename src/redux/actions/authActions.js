@@ -11,7 +11,7 @@ export const login = (email, pass) => {
     return dispatch => {
         auth.signInWithEmailAndPassword(email, pass).then(() => {
             dispatch({ type: LOGIN_SUCCESS });
-        }).catch((err) => {
+        }).catch(err => {
             dispatch({ type: LOGIN_ERROR, err });
         });
     }
@@ -33,7 +33,7 @@ export const signup = (email, pass) => {
         ).then()
         .then(() => {
             dispatch({ type: SIGNUP_SUCCESS });
-        }).catch((err) => {
+        }).catch(err => {
             dispatch({ type: SIGNUP_ERROR, err});
         });
     }
