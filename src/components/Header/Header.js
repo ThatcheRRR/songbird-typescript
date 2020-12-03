@@ -7,7 +7,7 @@ import Alert from '../Alert';
 
 const Header = () => {
     const totalScore = useSelector(state => state.totalScore);
-    const [error, setError] = useState("");
+    const [error, setError] = useState('');
     const { currentUser, logout } = useAuth();
     const history = useHistory();
 
