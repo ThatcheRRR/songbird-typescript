@@ -11,7 +11,7 @@ const Header = () => {
 
     const handleLogout = e => {
         e.preventDefault();
-        dispatch(logout);
+        dispatch(logout());
     };
 
     return(
