@@ -1,52 +1,37 @@
 import {
     LOGIN_SUCCESS,
     LOGIN_ERROR,
-    SIGNOUT_SUCCESS,
+    LOGOUT_SUCCESS,
     SIGNUP_ERROR,
     SIGNUP_SUCCESS
 } from '../types/authTypes';
+import { auth } from '../../utils/firebase';
 
-export const signIn = credentials => {
-    return (dispatch, getState, {getFirebase}) => {
-        const firebase = getFirebase();
-
-        firebase.auth().signInWithEmailAndPassword(
-            credentials.email,
-            credentials.password
-        ).then(() => {
+export const login = (email, pass) => {
+    return dispatch => {
+        auth.signInWithEmailAndPassword(email, pass).then(() => {
             dispatch({ type: LOGIN_SUCCESS });
         }).catch((err) => {
             dispatch({ type: LOGIN_ERROR, err });
         });
-
     }
 }
 
-export const signOut = () => {
-    return (dispatch, getState, {getFirebase}) => {
-        const firebase = getFirebase();
-
-        firebase.auth().signOut().then(() => {
-            dispatch({ type: SIGNOUT_SUCCESS })
+export const logout = () => {
+    return dispatch => {
+        auth.signOut().then(() => {
+            dispatch({ type: LOGOUT_SUCCESS })
         });
     }
 }
 
-export const signUp = (newUser) => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
-        const firebase = getFirebase();
-        const firestore = getFirestore();
-
-        firebase.auth().createUserWithEmailAndPassword(
-            newUser.email,
-            newUser.password
-        ).then(resp => {
-            return firestore.collection('users').doc(resp.user.uid).set({
-                firstName: newUser.firstName,
-                lastName: newUser.lastName,
-                initials: newUser.firstName[0] + newUser.lastName[0]
-            });
-        }).then(() => {
+export const signup = (email, pass) => {
+    return dispatch => {
+        auth.createUserWithEmailAndPassword(
+            email,
+            pass
+        ).then()
+        .then(() => {
             dispatch({ type: SIGNUP_SUCCESS });
         }).catch((err) => {
             dispatch({ type: SIGNUP_ERROR, err});

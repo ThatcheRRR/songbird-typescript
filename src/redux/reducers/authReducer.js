@@ -1,17 +1,17 @@
 import {
     LOGIN_SUCCESS,
     LOGIN_ERROR,
-    SIGNOUT_SUCCESS,
+    LOGOUT_SUCCESS,
     SIGNUP_ERROR,
     SIGNUP_SUCCESS
 } from '../types/authTypes';
 
 const initState = {
     authError: null
-}
+};
 
 export const authReducer = (state = initState, action) => {
-    switch(action.type){
+    switch(action.type) {
         case LOGIN_ERROR:
             console.log('login error');
             return {
@@ -24,8 +24,8 @@ export const authReducer = (state = initState, action) => {
                 ...state,
                 authError: null
             };
-        case SIGNOUT_SUCCESS:
-            console.log('signout success');
+        case LOGOUT_SUCCESS:
+            console.log('logout success');
             return state;
         case SIGNUP_SUCCESS:
             console.log('signup success')
