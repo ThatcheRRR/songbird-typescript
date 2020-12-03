@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Alert from '../Alert';
 import { signup } from '../../redux/actions/authActions';
 
 const SignUp = () => {
     const authError = useSelector(state => state.auth.authError);
+    const isSigned = useSelector(state => state.auth.isSigned);
     const dispatch = useDispatch();
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(signup(email, pass));
+        dispatch(signup(email, pass, confirm));
     };
+
+    useEffect(() => {
+        if(isSigned) {
+            history.push('/login');
+        }
+    }, [isSigned]);
 
     return (
         <div className = 'modal signup'>

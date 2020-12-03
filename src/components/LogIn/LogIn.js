@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Alert from '../Alert';
-import { login } from '../../redux/actions/authActions';
+import { login, resetSign } from '../../redux/actions/authActions';
 
 const LogIn = () => {
     const authError = useSelector(state => state.auth.authError);
+    const isLogged = useSelector(state => state.auth.isLogged);
+    const history = useHistory();
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -14,6 +16,16 @@ const LogIn = () => {
         e.preventDefault();
         dispatch(login(email, pass));
     };
+
+    useEffect(() => {
+        dispatch(resetSign());
+    }, []);
+
+    useEffect(() => {
+        if(isLogged) {
+            history.push('/');
+        }
+    }, [isLogged]);
 
     return (
         <div className = 'modal login'>
