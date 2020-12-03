@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { onGameWon } from '../../redux/actions/gameActions';
 import winningImage from '../../assets/winningImage.jpg';
 const maxScore = 30;
 
-const Results = ({ totalScore, isGameWon }) => {
+const Results = () => {
     const dispatch = useDispatch();
+    const totalScore = useSelector(state => state.game.totalScore);
+    const isGameWon = useSelector(state => state.game.isGameWon);
+
     useEffect(() => {
         if(totalScore === maxScore) {
             dispatch(onGameWon());
         }
     }, []);
+
     const winningScreen = (
         <>
             <img src = {winningImage} alt = 'winning poster' />
@@ -30,13 +34,6 @@ const Results = ({ totalScore, isGameWon }) => {
             {isGameWon ? winningScreen : loosingScreen}
         </div>
     );
-}
-
-const mapStateToProps = state => {
-    return {
-        totalScore: state.game.totalScore,
-        isGameWon: state.game.isGameWon
-    }
 };
 
-export default connect(mapStateToProps)(Results);
+export default Results;

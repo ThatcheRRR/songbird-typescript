@@ -1,10 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Player from '../Player/Player';
 import data from '../../data/data';
 
-const Description = ({ gameId, currentTheme }) => {
+const Description = () => {
+    const currentTheme = useSelector(state => state.game.currentTheme);
+    const gameId = useSelector(state => state.game.gameId);
     const pickedGame = data[currentTheme][gameId];
+
     return(
     <section className = "description">
         {
@@ -37,13 +40,6 @@ const Description = ({ gameId, currentTheme }) => {
         }
     </section>
     );
-}
+};
 
-const mapStateToProps = state => {
-    return {
-        gameId: state.game.gameId,
-        currentTheme: state.game.currentTheme
-    }
-}
-
-export default connect(mapStateToProps)(Description);
+export default Description;

@@ -18,6 +18,6 @@ const Indicator = ({
     return(
         <span className = {className} />
     );
-}
+};
 
 export default Indicator;

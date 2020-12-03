@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Alert from '../Alert';
+import { signup } from '../../redux/actions/authActions';
 
 const SignUp = () => {
+    const authError = useSelector(state => state.auth.authError);
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(email, pass, confirm);
+        dispatch(signup(email, pass));
     };
 
     return (
         <div className = 'modal signup'>
+            {
+                authError && <Alert error = {authError} />
+            }
             <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Sign Up</h2>
                 <div className = 'form__control'>

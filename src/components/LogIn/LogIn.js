@@ -9,12 +9,17 @@ const LogIn = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(login(email, pass))
+        dispatch(login(email, pass));
     };
+
     return (
         <div className = 'modal login'>
+            {
+                authError && <Alert error = {authError} />
+            }
             <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Log In</h2>
                 <div className = 'form__control'>

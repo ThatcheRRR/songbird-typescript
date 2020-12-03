@@ -7,6 +7,6 @@ const Quiz = () => {
             <QuizList />
         </section>
     )
-}
+};
 
 export default Quiz;

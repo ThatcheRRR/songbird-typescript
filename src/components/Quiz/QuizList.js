@@ -20,6 +20,6 @@ const QuizList = () => {
             {games}
         </ul>
     );
-}
+};
 
 export default QuizList;

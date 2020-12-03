@@ -11,9 +11,11 @@ const Question = ({
 }) => {
     let item = {};
     const rightAnswer = data[currentTheme][gameForQuestion];
+
     useEffect(() => {
         console.log(`Ответ: ${rightAnswer.name}`);
     }, [currentTheme]);
+
     if(isLevelDone) {
         item = data[currentTheme][gameForQuestion];
     } else {
@@ -33,7 +35,7 @@ const Question = ({
             </div>
         </section>
     );
-}
+};
 
 const mapStateToProps = state => {
     return {
@@ -41,6 +43,6 @@ const mapStateToProps = state => {
         isLevelDone: state.game.isLevelDone,
         currentTheme: state.game.currentTheme
     }
-}
+};
 
 export default connect(mapStateToProps)(Question);

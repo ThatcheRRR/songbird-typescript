@@ -15,7 +15,7 @@ export const login = (email, pass) => {
             dispatch({ type: LOGIN_ERROR, err });
         });
     }
-}
+};
 
 export const logout = () => {
     return dispatch => {
@@ -23,7 +23,7 @@ export const logout = () => {
             dispatch({ type: LOGOUT_SUCCESS })
         });
     }
-}
+};
 
 export const signup = (email, pass) => {
     return dispatch => {
@@ -37,4 +37,4 @@ export const signup = (email, pass) => {
             dispatch({ type: SIGNUP_ERROR, err});
         });
     }
-}
+};

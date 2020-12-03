@@ -8,6 +8,7 @@ import Results from '../Results';
 
 const Main = () => {
     const isGameDone = useSelector(state => state.game.isGameDone);
+
     return(
         <main className = {isGameDone ? 'results' : ''}>
             {
@@ -27,6 +28,6 @@ const Main = () => {
             <NextButton />
         </main>
     )
-}
+};
 
 export default Main;
