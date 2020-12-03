@@ -59,7 +59,7 @@ const LogIn = () => {
                 <button>
                     Log In
                 </button>
-                <div className = 'info'>
+                <div className = 'modal__info'>
                     Doesn't have an accout? <Link to = '/signup'>Create now</Link>
                 </div>
             </form>

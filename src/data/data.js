@@ -33,7 +33,7 @@ const data = [
             name: `PLAYERUNKNOWN'S BATTLEGROUNDS`,
             description: 'разработана и издана студией PUBG Corporation в 2017 году. Игроки в количестве до 100 человек сражаются в «королевской битве», где игроки воюют между собой, чтобы стать последним выжившим.',
             image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/c/c9/Логотип_игры_PlayerUnknown%27s_Battlegrounds.jpg/800px-Логотип_игры_PlayerUnknown%27s_Battlegrounds.jpg',
-            audio: 'https://storage.lightaudio.ru/399226ea/4d57f92b/PUBG%20%E2%80%94%20Main%20Menu%20OST.mp3'
+            audio: 'https://storage.lightaudio.ru/3992251c/47340758/Main%20menu%20—%20OST%20PUBG.mp3'
         },
         {
             id: 5,
@@ -232,7 +232,7 @@ const data = [
             name: 'The Walking Dead: The Game',
             description: 'разработана студией Telltale Games в 2012 году. Главным героем игры является персонаж Ли Эверетт. В момент начала зомби-апокалипсиса он находится под арестом, но оказывается на свободе и борется за выживание вместе с встреченной им 8-летней девочкой по имени Клементина.',
             image: 'https://vignette.wikia.nocookie.net/walkingdead/images/c/c3/WDG_Season_1_Original_Score.png/revision/latest?cb=20140410003043',
-            audio: 'https://data.ipleer.com/listen/64894575/VStFTU9lNG5XQ2lYa29XOTY4RkU1Tk9Ody9EYTRxbEErd1RFUk8xNkZpaVFEQ2lnSnB5c0x4OW9lUDBiN3lYb1JUOFp1UFIvd0tkbUVscGtFbmZHT2gySGRMdUgwWjF4RDROb1lYeElmdG5KcFNHZEQ2SEx3cWF4OXFZVnIxVlE/OST_The_Walking_Dead_Game_-_Main_Theme_(iPleer.com).mp3'
+            audio: 'https://muz18.z1.fm/0/00/iz_igri_the_walking_dead_the_game_-_main_theme_(zf.fm).mp3'
         },
         {
             id: 2,

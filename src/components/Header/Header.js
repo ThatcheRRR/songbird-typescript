@@ -24,11 +24,11 @@ const Header = () => {
                 <h1>
                     Games<span>osts</span>
                 </h1>
-                <div className = 'user-menu'>
-                    <div className = 'current-user'>
+                <div className = 'header-top__user user'>
+                    <div className = 'user__current-user'>
                         User: {auth.currentUser && auth.currentUser.email}
                     </div>
-                    <button onClick = {handleLogout}>
+                    <button className = 'user__logout' onClick = {handleLogout}>
                         Log Out
                     </button>
                 </div>

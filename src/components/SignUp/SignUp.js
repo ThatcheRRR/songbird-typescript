@@ -67,7 +67,7 @@ const SignUp = () => {
                 <button>
                     Sign Up
                 </button>
-                <div className = 'info'>
+                <div className = 'modal__info'>
                     Already got an account? <Link to = '/login'>Log In</Link>
                 </div>
             </form>

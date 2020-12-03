@@ -13,7 +13,6 @@ export const login = (email, pass) => {
             const data = await auth.signInWithEmailAndPassword(email, pass);
             dispatch({ type: LOGIN_SUCCESS, userEmail: data.user.email });
         } catch(err) {
-            console.log(err)
             dispatch({ type: ERROR, err });
         }
     }
