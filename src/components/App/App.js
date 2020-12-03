@@ -8,7 +8,7 @@ const App = () => {
     return(
         <Router>
             <Switch>
-                <Route path = '/game' exact component = {Container} />
+                <Route path = '/' exact component = {Container} />
                 <Route path = '/signup' exact component = {SignUp} />
                 <Route path = '/login' exact component = {LogIn} />
                 <Redirect to = '/login' />

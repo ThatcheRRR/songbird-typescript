@@ -7,22 +7,25 @@ import {
 } from '../types/authTypes';
 
 const initState = {
-    authError: null
+    authError: null,
+    isLogged: false,
+    userEmail: ''
 };
 
 export const authReducer = (state = initState, action) => {
     switch(action.type) {
         case LOGIN_ERROR:
-            console.log('login error');
             return {
                 ...state,
-                authError: 'Login failed'
+                authError: action.err.message,
             };
         case LOGIN_SUCCESS:
             console.log('login success');
             return {
                 ...state,
-                authError: null
+                authError: null,
+                isLogged: true,
+                userEmail: action.userEmail
             };
         case LOGOUT_SUCCESS:
             console.log('logout success');

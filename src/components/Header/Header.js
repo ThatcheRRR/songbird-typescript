@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import TitleList from './TitleList';
 import Alert from '../Alert';
 import { logout } from '../../redux/actions/authActions';
+import { auth } from '../../utils/firebase';
 
 const Header = () => {
     const totalScore = useSelector(state => state.game.totalScore);
@@ -24,9 +25,9 @@ const Header = () => {
                     Games<span>osts</span>
                 </h1>
                 <div className = 'user-menu'>
-                    {/*<div className = 'current-user'>*/}
-                    {/*    {currentUser}*/}
-                    {/*</div>*/}
+                    <div className = 'current-user'>
+                        User: {auth.currentUser && auth.currentUser.email}
+                    </div>
                     <button onClick = {handleLogout}>
                         Log Out
                     </button>

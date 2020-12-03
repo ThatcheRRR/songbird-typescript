@@ -9,8 +9,8 @@ import { auth } from '../../utils/firebase';
 
 export const login = (email, pass) => {
     return dispatch => {
-        auth.signInWithEmailAndPassword(email, pass).then(() => {
-            dispatch({ type: LOGIN_SUCCESS });
+        auth.signInWithEmailAndPassword(email, pass).then(data => {
+            dispatch({ type: LOGIN_SUCCESS, userEmail: data.user.email });
         }).catch(err => {
             dispatch({ type: LOGIN_ERROR, err });
         });
@@ -30,7 +30,7 @@ export const signup = (email, pass) => {
         auth.createUserWithEmailAndPassword(
             email,
             pass
-        ).then()
+        ).then(data => console.log(data))
         .then(() => {
             dispatch({ type: SIGNUP_SUCCESS });
         }).catch(err => {
