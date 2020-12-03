@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { useSelector } from 'react-redux';
 import TitleList from './TitleList';
 import Alert from '../Alert';
@@ -8,9 +8,6 @@ const Header = () => {
 
     return(
         <header>
-            {
-                error && <Alert error = {error} />
-            }
             <div className = 'header-top'>
                 <h1>
                     Games<span>osts</span>
@@ -19,7 +16,7 @@ const Header = () => {
                     {/*<div className = 'current-user'>*/}
                     {/*    {currentUser}*/}
                     {/*</div>*/}
-                    <button onClick = {handleLogout}>
+                    <button onClick = {() => {}}>
                         Log Out
                     </button>
                 </div>
