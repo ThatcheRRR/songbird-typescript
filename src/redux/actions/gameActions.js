@@ -6,12 +6,12 @@ import {
     PICKED_GAME,
     RESTART_GAME,
     GAME_WON
-} from './types';
-import maxScoreSound from '../assets/maxScoreSound.mp3';
+} from '../types/gameTypes';
+import maxScoreSound from '../../assets/maxScoreSound.mp3';
 
 export const onChangeTitle = () => {
     return {
-        type: CHANGE_TITLE 
+        type: CHANGE_TITLE
     };
 };
 
@@ -49,7 +49,7 @@ export const onGameDone = () => {
 export const onGameWon = () => {
     return dispatch => {
         dispatch({ type: GAME_WON });
-        const congrats = new Audio(maxScoreSound); 
+        const congrats = new Audio(maxScoreSound);
         setTimeout(() => {
             congrats.play();
         }, 500);

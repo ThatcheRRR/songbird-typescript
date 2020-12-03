@@ -37,9 +37,9 @@ const Question = ({
 
 const mapStateToProps = state => {
     return {
-        gameForQuestion: state.gameForQuestion,
-        isLevelDone: state.isLevelDone,
-        currentTheme: state.currentTheme
+        gameForQuestion: state.game.gameForQuestion,
+        isLevelDone: state.game.isLevelDone,
+        currentTheme: state.game.currentTheme
     }
 }
 

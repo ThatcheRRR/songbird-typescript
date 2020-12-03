@@ -4,7 +4,7 @@ import {
     onChangeTitle,
     onRestartGame,
     onGameDone
-} from '../../redux/actions';
+} from '../../redux/actions/gameActions';
 
 const maxLevel = 5;
 const actions = {
@@ -44,10 +44,10 @@ const NextButton = ({
 
 const mapStateToProps = state => {
     return {
-        isLevelDone: state.isLevelDone,
-        isGameDone: state.isGameDone,
-        isGameWon: state.isGameWon,
-        currentTheme: state.currentTheme
+        isLevelDone: state.game.isLevelDone,
+        isGameDone: state.game.isGameDone,
+        isGameWon: state.game.isGameWon,
+        currentTheme: state.game.currentTheme
     }
 }
 

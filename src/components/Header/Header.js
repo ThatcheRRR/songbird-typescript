@@ -4,8 +4,7 @@ import TitleList from './TitleList';
 import Alert from '../Alert';
 
 const Header = () => {
-    const totalScore = useSelector(state => state.totalScore);
-
+    const totalScore = useSelector(state => state.game.totalScore);
     return(
         <header>
             <div className = 'header-top'>

@@ -3,7 +3,7 @@ import Header from '../Header';
 import Main from '../Main';
 
 const Container = () => {
-    return (
+    return(
         <div className = 'container'>
             <Header />
             <Main />

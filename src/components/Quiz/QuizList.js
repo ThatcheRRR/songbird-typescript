@@ -4,7 +4,7 @@ import QuizItem from './QuizItem';
 import data from '../../data/data';
 
 const QuizList = () => {
-    const currentTheme = useSelector(state => state.currentTheme);
+    const currentTheme = useSelector(state => state.game.currentTheme);
     let games = data[currentTheme].map((item) => {
         return(
             <QuizItem

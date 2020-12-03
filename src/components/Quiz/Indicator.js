@@ -16,7 +16,7 @@ const Indicator = ({
     }
 
     return(
-        <span className = {className}></span>
+        <span className = {className} />
     );
 }
 

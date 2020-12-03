@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { onGameWon } from '../../redux/actions';
+import { onGameWon } from '../../redux/actions/gameActions';
 import winningImage from '../../assets/winningImage.jpg';
 const maxScore = 30;
 
@@ -34,8 +34,8 @@ const Results = ({ totalScore, isGameWon }) => {
 
 const mapStateToProps = state => {
     return {
-        totalScore: state.totalScore,
-        isGameWon: state.isGameWon
+        totalScore: state.game.totalScore,
+        isGameWon: state.game.isGameWon
     }
 };
 

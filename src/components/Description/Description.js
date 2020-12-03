@@ -4,7 +4,7 @@ import Player from '../Player/Player';
 import data from '../../data/data';
 
 const Description = ({ gameId, currentTheme }) => {
-    let pickedGame = data[currentTheme][gameId];
+    const pickedGame = data[currentTheme][gameId];
     return(
     <section className = "description">
         {
@@ -41,8 +41,8 @@ const Description = ({ gameId, currentTheme }) => {
 
 const mapStateToProps = state => {
     return {
-        gameId: state.gameId,
-        currentTheme: state.currentTheme
+        gameId: state.game.gameId,
+        currentTheme: state.game.currentTheme
     }
 }
 

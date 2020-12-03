@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { onPickGame, onChangeRefresh, onPickWrongAnswer } from '../../redux/actions';
+import { onPickGame, onChangeRefresh, onPickWrongAnswer } from '../../redux/actions/gameActions';
 import Indicator from './Indicator';
 const actions = {
     onPickGame,
@@ -58,9 +58,9 @@ class QuizItem extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        gameForQuestion: state.gameForQuestion,
-        isLevelDone: state.isLevelDone,
-        needRefresh: state.needRefresh
+        gameForQuestion: state.game.gameForQuestion,
+        isLevelDone: state.game.isLevelDone,
+        needRefresh: state.game.needRefresh
     }
 };
 
