@@ -1,48 +1,40 @@
-import React, { useState, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Alert from '../Alert';
 
 const LogIn = () => {
-    const emailRef = useRef();
-    const passwordRef = useRef();
-    const { login } = useAuth();
-    const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false);
-    const history = useHistory();
-
-    async function handleSubmit(e) {
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+    const handleSubmit = e => {
         e.preventDefault();
+        console.log(email, pass, confirm);
+    };
 
-        try {
-            setError('');
-            setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
-            history.push('/');
-        } catch(error) {
-            setError(error.message);
-        }
-
-        setLoading(false);
-    }
     return (
         <div className = 'modal login'>
-            {
-                error && <Alert error = {error} />
-            }
             <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Log In</h2>
                 <div className = 'form__control'>
                     <label htmlFor = 'email'>
                         Email
                     </label>
-                    <input id = 'email' type = 'email' ref = {emailRef} />
+                    <input
+                        id = 'email'
+                        type = 'email'
+                        value = {email}
+                        onChange = {e => setEmail(e.target.value)}
+                    />
                 </div>
                 <div className = 'form__control'>
                     <label htmlFor = 'password'>
                         Password
                     </label>
-                    <input id = 'password' type = 'password' ref = {passwordRef} />
+                    <input
+                        id = 'password'
+                        type = 'password'
+                        value = {pass}
+                        onChange = {e => setPass(e.target.value)}
+                    />
                 </div>
                 <button>
                     Log In
