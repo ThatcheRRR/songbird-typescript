@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import TitleList from './TitleList';
+import Alert from '../Alert';
 
 const Header = () => {
     const totalScore = useSelector(state => state.totalScore);
@@ -22,6 +23,9 @@ const Header = () => {
     }
     return(
         <header>
+            {
+                error && <Alert error = {error} />
+            }
             <div className = 'header-top'>
                 <h1>
                     Games<span>osts</span>

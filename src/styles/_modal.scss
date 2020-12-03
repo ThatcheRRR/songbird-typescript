@@ -6,25 +6,6 @@
   justify-content: center;
   align-items: center;
 
-  &__alert {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    padding: 10px;
-    background-color: #d62c1a;
-    animation: alert .5s ease;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -4px;
-      width: 4px;
-      height: 100%;
-      background-color: darken(#d62c1a, 15%);
-    }
-  }
-
   .form {
     display: flex;
     width: 300px;

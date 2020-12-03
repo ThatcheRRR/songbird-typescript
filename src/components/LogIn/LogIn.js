@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import Alert from '../Alert';
 
 const LogIn = () => {
     const emailRef = useRef();
@@ -18,8 +19,8 @@ const LogIn = () => {
             setLoading(true);
             await login(emailRef.current.value, passwordRef.current.value);
             history.push('/');
-        } catch {
-            setError('Failed to log in');
+        } catch(error) {
+            setError(error.message);
         }
 
         setLoading(false);
@@ -27,12 +28,7 @@ const LogIn = () => {
     return (
         <div className = 'modal login'>
             {
-                error
-                && (
-                    <div className = 'modal__alert'>
-                        {error}
-                    </div>
-                )
+                error && <Alert error = {error} />
             }
             <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Log In</h2>
@@ -48,7 +44,7 @@ const LogIn = () => {
                     </label>
                     <input id = 'password' type = 'password' ref = {passwordRef} />
                 </div>
-                <button disabled = {loading}>
+                <button>
                     Log In
                 </button>
                 <div className = 'info'>

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import Alert from '../Alert';
 
 const SignUp = () => {
     const emailRef = useRef();
@@ -20,9 +21,9 @@ const SignUp = () => {
             setError('');
             setLoading(true);
             await signup(emailRef.current.value, passwordRef.current.value);
-            history.push('/');
-        } catch {
-            setError('Failed to create an account');
+            history.push('/login');
+        } catch(error) {
+            setError(error.message);
         }
 
         setLoading(false)
@@ -30,12 +31,7 @@ const SignUp = () => {
     return (
         <div className = 'modal signup'>
             {
-                error
-                && (
-                    <div className = 'modal__alert'>
-                        {error}
-                    </div>
-                )
+                error && <Alert error = {error} />
             }
             <form className = 'modal__form form' onSubmit = {handleSubmit}>
                 <h2>Sign Up</h2>
@@ -57,7 +53,7 @@ const SignUp = () => {
                     </label>
                     <input id = 'confirm' type = 'password' ref = {passwordConfirmRef} />
                 </div>
-                <button disabled = {loading}>
+                <button>
                     Sign Up
                 </button>
                 <div className = 'info'>
