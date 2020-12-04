@@ -3,11 +3,12 @@ import {
     LOGOUT_SUCCESS,
     SIGNUP_SUCCESS,
     RESET_SIGN,
+    RESET_ERROR,
     ERROR
 } from '../types/authTypes';
 
 const initState = {
-    authError: null,
+    authError: '',
     isLogged: false,
     isSigned: false,
     userEmail: ''
@@ -18,7 +19,7 @@ export const authReducer = (state = initState, action) => {
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                authError: null,
+                authError: '',
                 isLogged: true,
                 userEmail: action.userEmail
             };
@@ -26,12 +27,13 @@ export const authReducer = (state = initState, action) => {
             return {
                 ...state,
                 isLogged: false,
-                userEmail: ''
+                userEmail: '',
+                authError: ''
             };
         case SIGNUP_SUCCESS:
             return {
                 ...state,
-                authError: null,
+                authError: '',
                 isSigned: true
             };
         case ERROR:
@@ -42,7 +44,13 @@ export const authReducer = (state = initState, action) => {
         case RESET_SIGN:
             return {
                 ...state,
-                isSigned: false
+                isSigned: false,
+                authError: ''
+            };
+        case RESET_ERROR:
+            return {
+                ...state,
+                authError: ''
             }
         default:
             return state;

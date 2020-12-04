@@ -3,6 +3,7 @@ import {
     LOGOUT_SUCCESS,
     SIGNUP_SUCCESS,
     RESET_SIGN,
+    RESET_ERROR,
     ERROR
 } from '../types/authTypes';
 import { auth } from '../../utils/firebase';
@@ -45,4 +46,8 @@ export const signup = (email, pass, confirm) => {
 
 export const resetSign = () => ({
     type: RESET_SIGN
+});
+
+export const resetError = () => ({
+    type: RESET_ERROR
 });

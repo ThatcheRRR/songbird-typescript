@@ -1,10 +1,11 @@
 .alert {
   position: absolute;
+  z-index: 2;
   right: 20px;
   top: 20px;
   padding: 10px;
   background-color: #d62c1a;
-  animation: alert .5s ease;
+  animation: alert .5s ease, hide .5s ease 5s forwards;
 
   &::before {
     content: '';
@@ -16,3 +17,24 @@
     background-color: darken(#d62c1a, 15%);
   }
 }
+
+@keyframes alert {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+};
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+};

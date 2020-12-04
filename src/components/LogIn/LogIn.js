@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Alert from '../Alert';
-import { login, resetSign } from '../../redux/actions/authActions';
+import { login, resetSign, resetError } from '../../redux/actions/authActions';
 
 const LogIn = () => {
     const authError = useSelector(state => state.auth.authError);
@@ -14,6 +14,7 @@ const LogIn = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        dispatch(resetError());
         dispatch(login(email, pass));
     };
 
