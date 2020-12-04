@@ -7,14 +7,14 @@ import {
     ERROR
 } from '../types/authTypes';
 
-const initState = {
-    authError: '',
+const initialState = {
     isLogged: false,
     isSigned: false,
+    authError: '',
     userEmail: ''
 };
 
-export const authReducer = (state = initState, action) => {
+export const authReducer = (state = initialState, action) => {
     switch(action.type) {
         case LOGIN_SUCCESS:
             return {
@@ -26,9 +26,7 @@ export const authReducer = (state = initState, action) => {
         case LOGOUT_SUCCESS:
             return {
                 ...state,
-                isLogged: false,
-                userEmail: '',
-                authError: ''
+                ...initialState
             };
         case SIGNUP_SUCCESS:
             return {
