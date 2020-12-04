@@ -1,0 +1,21 @@
+main {
+    grid-area: main;
+    display: grid;
+    grid-template: auto auto 45px / 1fr 2fr;
+    grid-template-areas: 
+    'question question'
+    'quiz description'
+    'button button';
+    grid-gap: 25px;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template: auto auto auto 45px / auto;
+        grid-template-areas: 
+        "question"
+        "quiz"
+        "description"
+        "button";
+    }
+}

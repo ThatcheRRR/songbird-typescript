@@ -1,0 +1,71 @@
+header {
+    grid-area: header;
+    margin-top: 20px;
+    font-size: 25px;
+
+    h1 {
+        font-weight: 100;
+        font-family: 'Pricedown';
+        & > span {
+            font-family: 'Pricedown';
+            color: #008966;
+        }
+    }
+
+    h1 ~ p {
+        font-size: 20px;
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .theme-list {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        font-size: 15px;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .theme {
+            display: inline-flex;
+            align-items: center;
+            flex: 1 1;
+            padding: 10px;
+            justify-content: center;
+            background-color: darken(#00bc8c, 10%);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.active {
+                background-color: #00bc8c;
+            }
+        }
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        font-size: 1rem;
+
+        &__logout {
+            padding: 5px;
+            font-size: 1rem;
+            background-color: darken(#00bc8c, 10%);
+
+            &:hover {
+                background-color: #00bc8c;
+            }
+        }
+    }
+}

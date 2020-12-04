@@ -4,9 +4,9 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
-import App from './Components/App/App.js';
+import App from './components/App';
 import { rootReducer } from './redux/rootReducer';
+import './styles/index.scss';
 
 const store = createStore(
     rootReducer,
@@ -15,8 +15,10 @@ const store = createStore(
     )
 );
 
-const app = <Provider store = {store}>
-                <App />
-            </Provider>
+const app = (
+    <Provider store = {store}>
+        <App />
+    </Provider>
+);
 
 ReactDOM.render(app, document.getElementById('root'));

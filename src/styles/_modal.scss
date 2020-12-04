@@ -1,0 +1,62 @@
+.modal {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    display: flex;
+    width: 300px;
+    flex-flow: wrap column;
+    row-gap: 25px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #404040;
+    box-shadow: 0 0 10px #404040;
+    transition: .3s ease;
+
+    &:hover {
+      box-shadow: none;
+      width: 600px;
+    }
+
+    &__control {
+      width: 100%;
+      display: flex;
+      flex-flow: wrap column;
+      row-gap: 5px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      height: 30px;
+      color: #000;
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    a {
+      color: #00bc8c;
+
+      &:hover {
+        color: lighten(#00bc8c, 10%);
+      }
+    }
+  }
+
+  button {
+    padding: 10px;
+    background-color: darken(#00bc8c, 10%);
+
+    &:hover {
+      background-color: #00bc8c;
+    }
+  }
+}
