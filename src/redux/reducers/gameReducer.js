@@ -79,7 +79,8 @@ export const gameReducer = (state = initialState, action) => {
         case RESTART_GAME:
             state = {
                 ...state,
-                ...initialState
+                ...initialState,
+                gameForQuestion: Math.floor(Math.random() * 6),
             }
             return state;
         case GAME_DONE:

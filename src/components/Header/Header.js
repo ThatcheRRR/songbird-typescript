@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import TitleList from './TitleList';
 import Alert from '../Alert';
 import { logout } from '../../redux/actions/authActions';
+import { onRestartGame } from '../../redux/actions/gameActions';
 import { auth } from '../../utils/firebase';
 
 const Header = () => {
@@ -13,6 +14,7 @@ const Header = () => {
     const handleLogout = e => {
         e.preventDefault();
         dispatch(logout());
+        dispatch(onRestartGame());
     };
 
     return(
