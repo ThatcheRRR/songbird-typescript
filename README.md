@@ -2,8 +2,6 @@
 
 ## Структура приложения
 Игровое поле викторины состоит из четырёх блоков:
-![Пример дизайна приложения](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/songbird/screenshot_birds-quiz.png)
-###### Пример дизайна приложения
 
 * header
 * блок с текущим вопросом
