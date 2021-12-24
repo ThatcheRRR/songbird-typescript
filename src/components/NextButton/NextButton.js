@@ -24,24 +24,29 @@ const NextButton = ({
 }) => {
     let className = '';
     const checkCorrect = () => {
-        if(isLevelDone) {
+        if (isLevelDone) {
             onChangeTitle();
         } else {
             return;
         }
-        if(currentTheme === maxLevel) {
+        if (currentTheme === maxLevel) {
             onGameDone();
         }
     };
 
-    if(isLevelDone || isGameDone) {
+    if (isLevelDone || isGameDone) {
         className = 'next'
     }
 
-    let buttonText = isGameWon && isGameDone ? 'Повторить рекорд' : !isGameWon && isGameDone ? 'Попробовать ещё раз!' : 'Next Level';
+    const buttonText = isGameWon && isGameDone ? 'Повторить рекорд' : !isGameWon && isGameDone ? 'Попробовать ещё раз!' : 'Next Level';
 
-    return(
-        <button className = {className} onClick = {isGameDone ? onRestartGame : checkCorrect}>{buttonText}</button>
+    return (
+        <button
+            className={className}
+            onClick={isGameDone ? onRestartGame : checkCorrect}
+        >
+            {buttonText}
+        </button>
     );
 };
 
@@ -49,7 +54,7 @@ const mapStateToProps = state => ({
     isLevelDone: state.game.isLevelDone,
     isGameDone: state.game.isGameDone,
     isGameWon: state.game.isGameWon,
-    currentTheme: state.game.currentTheme
+    currentTheme: state.game.currentTheme,
 });
 
 export default connect(mapStateToProps, actions)(NextButton);

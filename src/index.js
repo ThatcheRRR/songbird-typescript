@@ -16,7 +16,7 @@ const store = createStore(
 );
 
 const app = (
-    <Provider store = {store}>
+    <Provider store={store}>
         <App />
     </Provider>
 );

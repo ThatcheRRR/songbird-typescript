@@ -5,13 +5,13 @@ import SignUp from '../SignUp';
 import LogIn from '../LogIn';
 
 const App = () => {
-    return(
+    return (
         <Router>
             <Switch>
-                <Route path = '/' exact component = {Container} />
-                <Route path = '/signup' exact component = {SignUp} />
-                <Route path = '/login' exact component = {LogIn} />
-                <Redirect to = '/login' />
+                <Route path='/' exact component={Container} />
+                <Route path='/signup' exact component={SignUp} />
+                <Route path='/login' exact component={LogIn} />
+                <Redirect to='/login' />
             </Switch>
         </Router>
     );

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Player from '../Player';
 import questionImage from '../../assets/question.png'
-import data from '../../data/data';
+import { data } from '../../data/data';
 
 const Question = ({
     gameForQuestion,
@@ -16,7 +16,7 @@ const Question = ({
         console.log(`Ответ: ${rightAnswer.name}`);
     }, [currentTheme]);
 
-    if(isLevelDone) {
+    if (isLevelDone) {
         item = data[currentTheme][gameForQuestion];
     } else {
         item.name = '******';
@@ -24,25 +24,23 @@ const Question = ({
     }
 
     return(
-        <section className = "question">
-            <img src = {item.image} alt = 'game poster' />
-            <div className = 'game-info'>
-                <h3 className = 'game-name'>{item.name}</h3>
+        <section className='question'>
+            <img src={item.image} alt='game poster' />
+            <div className='game-info'>
+                <h3 className='game-name'>{item.name}</h3>
                 <Player
-                    audio = {rightAnswer.audio}
-                    isLevelDone = {isLevelDone}
+                    audio={rightAnswer.audio}
+                    isLevelDone={isLevelDone}
                 />
             </div>
         </section>
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        gameForQuestion: state.game.gameForQuestion,
-        isLevelDone: state.game.isLevelDone,
-        currentTheme: state.game.currentTheme
-    }
-};
+const mapStateToProps = state => ({
+    gameForQuestion: state.game.gameForQuestion,
+    isLevelDone: state.game.isLevelDone,
+    currentTheme: state.game.currentTheme,
+});
 
 export default connect(mapStateToProps)(Question);

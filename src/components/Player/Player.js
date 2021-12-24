@@ -17,12 +17,13 @@ class Player extends React.Component {
     render() {
         return(
             <AudioPlayer
-                src = {this.props.audio}
-                showJumpControls = {false}
-                showSkipControls = {false}
-                autoPlayAfterSrcChange = {false}
-                autoPlay = {false}
-                ref = {this.audioRef}
+                src={this.props.audio}
+                showJumpControls={false}
+                showSkipControls={false}
+                autoPlayAfterSrcChange={false}
+                autoPlay={false}
+                ref={this.audioRef}
+                volume={0.05}
             />
         );
     }

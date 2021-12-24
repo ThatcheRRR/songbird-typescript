@@ -3,5 +3,5 @@ import { authReducer, gameReducer } from './reducers';
 
 export const rootReducer = combineReducers({
     auth: authReducer,
-    game: gameReducer
+    game: gameReducer,
 });

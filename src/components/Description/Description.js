@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Player from '../Player/Player';
-import data from '../../data/data';
+import { data } from '../../data/data';
 
 const Description = () => {
     const currentTheme = useSelector(state => state.game.currentTheme);

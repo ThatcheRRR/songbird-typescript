@@ -5,7 +5,7 @@ import {
     REFRESH,
     RESTART_GAME,
     GAME_DONE,
-    GAME_WON
+    GAME_WON,
 } from '../types/gameTypes';
 import wrongSound from '../../assets/wrong.mp3';
 import rightSound from '../../assets/right.mp3';
@@ -28,13 +28,13 @@ const initialState = {
     wrongAnswers: 0,
     totalScore: 0,
     isGameWon: false,
-    maxScore: 30
+    maxScore: 30,
 };
 
 export const gameReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case WRONG_ANSWER:
-            state = {...state, wrongAnswers: state.wrongAnswers + 1}
+            state = { ...state, wrongAnswers: state.wrongAnswers + 1 };
             return state;
         case CHANGE_TITLE:
             state = {
@@ -45,50 +45,47 @@ export const gameReducer = (state = initialState, action) => {
                 gameForQuestion: Math.floor(Math.random() * 6),
                 needRefresh: true,
                 wrongAnswers: 0,
-            }
+            };
             return state;
         case PICKED_GAME:
             state = {...state, gameId: action.gameId};
-            if(state.gameForQuestion === action.gameId) {
-                if(!state.isLevelDone) {
+            if (state.gameForQuestion === action.gameId) {
+                if (!state.isLevelDone) {
                     onRight.play();
                 }
-
                 let newScore;
-
-                if(state.isLevelDone) {
+                if (state.isLevelDone) {
                     newScore = state.totalScore;
                 } else {
                     newScore = state.totalScore + 5 - state.wrongAnswers;
                 }
-
                 state = {
                     ...state,
                     isLevelDone: true,
                     totalScore: newScore,
-                }
+                };
             }
-
-            if(!state.isLevelDone && action.gameId !== state.gameForQuestion) {
+            if (!state.isLevelDone && action.gameId !== state.gameForQuestion) {
                 playWrongSound();
             }
             return state;
         case REFRESH:
-            state = {...state, needRefresh: false};
+            state = { ...state, needRefresh: false };
             return state;
         case RESTART_GAME:
             state = {
                 ...state,
                 ...initialState,
                 gameForQuestion: Math.floor(Math.random() * 6),
-            }
+            };
             return state;
         case GAME_DONE:
-            state = {...state, isGameDone: true}
+            state = { ...state, isGameDone: true };
             return state;
         case GAME_WON:
-            state = {...state, isGameWon: true}
+            state = { ...state, isGameWon: true };
             return state;
-        default: return state;
+        default:
+            return state;
     }
 };

@@ -10,14 +10,14 @@ const Results = () => {
     const isGameWon = useSelector(state => state.game.isGameWon);
 
     useEffect(() => {
-        if(totalScore === maxScore) {
+        if (totalScore === maxScore) {
             dispatch(onGameWon());
         }
     }, []);
 
     const winningScreen = (
         <>
-            <img src = {winningImage} alt = 'winning poster' />
+            <img src={winningImage} alt='winning poster' />
             <h2>Игра окончена!</h2>
             <div>Поздравляем! Вы набрали максимальное количество баллов! Вы настоящий гуру игровой индустрии!</div>
         </>
@@ -29,8 +29,8 @@ const Results = () => {
         </>
     );
 
-    return(
-        <div className = 'result-info'>
+    return (
+        <div className='result-info'>
             {isGameWon ? winningScreen : loosingScreen}
         </div>
     );

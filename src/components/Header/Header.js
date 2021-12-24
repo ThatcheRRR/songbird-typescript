@@ -19,18 +19,16 @@ const Header = () => {
 
     return(
         <header>
-            {
-                authError && <Alert error = {authError} />
-            }
-            <div className = 'header-top'>
+            {authError && <Alert error = {authError} />}
+            <div className='header-top'>
                 <h1>
                     Games<span>osts</span>
                 </h1>
-                <div className = 'header-top__user user'>
-                    <div className = 'user__current-user'>
+                <div className='header-top__user user'>
+                    <div className='user__current-user'>
                         User: {auth.currentUser && auth.currentUser.email}
                     </div>
-                    <button className = 'user__logout' onClick = {handleLogout}>
+                    <button className='user__logout' onClick={handleLogout}>
                         Log Out
                     </button>
                 </div>
@@ -38,9 +36,9 @@ const Header = () => {
                     Score: {totalScore}
                 </p>
             </div>
-            <TitleList className = 'theme-list' />
+            <TitleList className='theme-list' />
         </header>
-    )
-}
+    );
+};
 
 export default Header;

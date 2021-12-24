@@ -1,28 +1,26 @@
-const levelName = [
+export const levelName = [
     {
         name: 'Shooter',
-        key: 'shooter'
+        key: 'shooter',
     },
     {
         name: 'Action',
-        key: 'action'
+        key: 'action',
     },
     {
         name: 'Strategy',
-        key: 'strategy'
+        key: 'strategy',
     },
     {
         name: 'RPG',
-        key: 'rpg'
+        key: 'rpg',
     },
     {
         name: 'Racing',
-        key: 'racing'
+        key: 'racing',
     },
     {
         name: 'Interactive drama',
-        key: 'interactive drama'
-    }
-]
-
-export default levelName;
+        key: 'interactive drama',
+    },
+];

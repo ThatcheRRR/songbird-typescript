@@ -7,12 +7,12 @@ import Main from '../Main';
 const Container = () => {
     const isLogged = useSelector(state => state.auth.isLogged);
 
-    if(!isLogged) {
+    if (!isLogged) {
         return <Redirect to = '/login' />
     }
 
-    return(
-        <div className = 'container'>
+    return (
+        <div className='container'>
             <Header />
             <Main />
         </div>

@@ -4,51 +4,51 @@ import {
     SIGNUP_SUCCESS,
     RESET_SIGN,
     RESET_ERROR,
-    ERROR
+    ERROR,
 } from '../types/authTypes';
 
 const initialState = {
     isLogged: false,
     isSigned: false,
     authError: '',
-    userEmail: ''
+    userEmail: '',
 };
 
 export const authReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case LOGIN_SUCCESS:
             return {
                 ...state,
                 authError: '',
                 isLogged: true,
-                userEmail: action.userEmail
+                userEmail: action.userEmail,
             };
         case LOGOUT_SUCCESS:
             return {
                 ...state,
-                ...initialState
+                ...initialState,
             };
         case SIGNUP_SUCCESS:
             return {
                 ...state,
                 authError: '',
-                isSigned: true
+                isSigned: true,
             };
         case ERROR:
             return {
                 ...state,
-                authError: action.err.message
+                authError: action.err.message,
             };
         case RESET_SIGN:
             return {
                 ...state,
                 isSigned: false,
-                authError: ''
+                authError: '',
             };
         case RESET_ERROR:
             return {
                 ...state,
-                authError: ''
+                authError: '',
             }
         default:
             return state;

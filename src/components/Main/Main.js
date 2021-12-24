@@ -9,25 +9,19 @@ import Results from '../Results';
 const Main = () => {
     const isGameDone = useSelector(state => state.game.isGameDone);
 
-    return(
-        <main className = {isGameDone ? 'results' : ''}>
-            {
-                isGameDone
-                &&
-                <Results />
-            }
-            {
-                !isGameDone
-                &&
-                (<>
+    return (
+        <main className={isGameDone ? 'results' : ''}>
+            {isGameDone && <Results />}
+            {!isGameDone && (
+                <>
                     <Question />
                     <Quiz />
                     <Description />
-                </>)
-            }
+                </>
+            )}
             <NextButton />
         </main>
-    )
+    );
 };
 
 export default Main;

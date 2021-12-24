@@ -20,60 +20,58 @@ const SignUp = () => {
     };
 
     useEffect(() => {
-        if(isSigned) {
+        if (isSigned) {
             history.push('/login');
         }
     }, [isSigned]);
 
     return (
-        <div className = 'modal signup'>
-            {
-                authError && <Alert error = {authError} />
-            }
-            <form className = 'modal__form form' onSubmit = {handleSubmit}>
+        <div className='modal signup'>
+            {authError && <Alert error = {authError} />}
+            <form className='modal__form form' onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
-                <div className = 'form__control'>
-                    <label htmlFor = 'email'>
+                <div className='form__control'>
+                    <label htmlFor='email'>
                         Email
                     </label>
                     <input
-                        id = 'email'
-                        type = 'email'
-                        value = {email}
-                        onChange = {e => setEmail(e.target.value)}
+                        id='email'
+                        type='email'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                     />
                 </div>
-                <div className = 'form__control'>
-                    <label htmlFor = 'password'>
+                <div className='form__control'>
+                    <label htmlFor='password'>
                         Password
                     </label>
                     <input
-                        id = 'password'
-                        type = 'password'
-                        value = {pass}
-                        onChange = {e => setPass(e.target.value)}
+                        id='password'
+                        type='password'
+                        value={pass}
+                        onChange={e => setPass(e.target.value)}
                     />
                 </div>
-                <div className = 'form__control'>
-                    <label htmlFor = 'confirm'>
+                <div className='form__control'>
+                    <label htmlFor='confirm'>
                         Confirm password
                     </label>
                     <input
-                        id = 'confirm'
-                        type = 'password'
-                        value = {confirm}
-                        onChange = {e => setConfirm(e.target.value)}
+                        id='confirm'
+                        type='password'
+                        value={confirm}
+                        onChange={e => setConfirm(e.target.value)}
                     />
                 </div>
                 <button>
                     Sign Up
                 </button>
-                <div className = 'modal__info'>
-                    Already got an account? <Link to = '/login'>Log In</Link>
+                <div className='modal__info'>
+                    Already got an account? <Link to='/login'>Log In</Link>
                 </div>
             </form>
         </div>
-    )
+    );
 };
 
 export default SignUp;

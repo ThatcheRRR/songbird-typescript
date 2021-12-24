@@ -1,29 +1,29 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import levelName from '../../data/levelName';
+import { levelName } from '../../data/levelName';
 
 const TitleList = () => {
     const currentTheme = useSelector(state => state.game.currentTheme);
-    let levels = levelName.map((item, ind) => {
+    const levels = levelName.map((item, ind) => {
         let currentTitle = 'theme'
-        if(ind === currentTheme) {
+        if (ind === currentTheme) {
             currentTitle += ' active';
         }
-        return(
+        return (
             <li
-                key = {item.key}
-                className = {currentTitle}
+                key={item.key}
+                className={currentTitle}
             >
                 {item.name}
             </li>
-        )
+        );
     });
 
-    return(
+    return (
         <ul className = 'theme-list'>
             {levels}
         </ul>
-    )
-}
+    );
+};
 
 export default TitleList;

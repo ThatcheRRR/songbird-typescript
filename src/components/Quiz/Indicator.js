@@ -7,16 +7,16 @@ const Indicator = ({
     isDefault
 }) => {
     let className = '';
-    if(isClicked && isCorrect && canChange) {
+    if (isClicked && isCorrect && canChange) {
         className = 'correct';
-    } else if(isClicked && !isCorrect && canChange) {
+    } else if (isClicked && !isCorrect && canChange) {
         className = 'wrong';
-    } else if(isDefault && !canChange) {
+    } else if (isDefault && !canChange) {
         className = '';
     }
 
-    return(
-        <span className = {className} />
+    return (
+        <span className={className} />
     );
 };
 
