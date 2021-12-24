@@ -1,0 +1,42 @@
+.rhap_additional-controls {
+  display: none;
+}
+
+.rhap_container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font-family: inherit;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #404040;
+  outline: none;
+  box-shadow: none;
+}
+
+.rhap_button-clear.rhap_main-controls-button.rhap_play-pause-button svg path,
+.rhap_button-clear.rhap_volume-button svg path {
+  fill: rgb(0, 188, 140);
+}
+
+.rhap_volume-indicator {
+  background-color: #00bc8c;
+}
+
+.rhap_volume-bar,
+.rhap_progress-bar.rhap_progress-bar-show-download {
+  background-color: hsla(0,0%,86.7%,.5);
+}
+
+.rhap_progress-indicator {
+  background-color: #666;
+}
+
+.rhap_stacked .rhap_controls-section {
+  margin-top: 15px;
+}
+
+.rhap_time {
+  color: #fff;
+}
