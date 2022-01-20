@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Alert from '../Alert';
 import { signup, resetError } from '../../redux/actions/authActions';
 
@@ -8,7 +8,7 @@ const SignUp = () => {
     const authError = useSelector(state => state.auth.authError);
     const isSigned = useSelector(state => state.auth.isSigned);
     const dispatch = useDispatch();
-    const history = useHistory();
+    const history = useNavigate();
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');

@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -14,63 +14,53 @@ const optimization = () => {
             chunks: 'all',
         }
     }
-
-    if(isProd) {
+    if (isProd) {
         config.minimizer = [
             new TerserWebpackPlugin(),
-            new OptimizeCssAssetsWebpackPlugin()
+            new CssMinimizerPlugin(),
         ]
     }
-
     return config;
-}
+};
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 const styleLoader = load => {
     const loader = [
-        {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-                hmr: isDev,
-                reloadAll: true
-            }
-        },
+        MiniCssExtractPlugin.loader,
         'css-loader',
-    ]
-
-    if(load) {
+    ];
+    if (load) {
         loader.push(load);
     }
-
-    return loader
-}
+    return loader;
+};
 
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
         filename: filename('js'),
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
     },
     optimization: optimization(),
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: styleLoader()
+                use: styleLoader(),
             },
             {
                 test: /\.s[ac]ss/,
-                use: styleLoader('sass-loader')
+                use: styleLoader('sass-loader'),
             },
             {
                 test: /\.(png|jpg|svg|gif)$/,
-                use: ['file-loader']
+                use: ['file-loader'],
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: ['file-loader']
+                use: ['file-loader'],
             },
             {
                 test: /\.js$/,
@@ -79,21 +69,22 @@ module.exports = {
             },
             {
                 test: /\.mp3$/,
-                use: ['file-loader']
+                use: ['file-loader'],
             },
-        ]
+        ],
     },
     plugins: [
         new HTMLWebpackPlugin({
             template: './src/index.html',
             favicon: './src/assets/favicon.ico',
             minify: {
-                collapseWhitespace: isProd
-            }
+                collapseWhitespace: isProd,
+            },
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: filename('css')
-        })
-    ]
-}
+            filename: filename('css'),
+            runtime: true,
+        }),
+    ],
+};
