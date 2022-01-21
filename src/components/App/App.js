@@ -1,19 +1,19 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Container from '../Container';
 import SignUp from '../SignUp';
 import LogIn from '../LogIn';
 
 const App = () => {
     return (
-        <Router>
+        <HashRouter>
             <Routes>
-                <Route path='/' exact component={Container} />
-                <Route path='/signup' exact component={SignUp} />
-                <Route path='/login' exact component={LogIn} />
-                <Route index to='/login' />
+                <Route path='/' index element={<Container />} />
+                <Route path='/signup' index element={<SignUp />} />
+                <Route path='/login' index element={<LogIn />} />
+                <Route path='*' to='/login' />
             </Routes>
-        </Router>
+        </HashRouter>
     );
 };
 

@@ -39,6 +39,7 @@ const styleLoader = load => {
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
+    devtool: 'inline-source-map',
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist'),
